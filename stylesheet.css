@@ -23,7 +23,7 @@ li, a{
     animation: HoverFadeOut 250ms;
     color: #ECEFF4;
     background: none;
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     padding: 2px;
 }
@@ -36,7 +36,7 @@ a:hover {
 header {
     display: flex;
     align-items: center;
-    padding: 24px 5%;
+    padding: 20px 5%;
     gap: 32px;
     background-color: #2e3440bb;
     backdrop-filter: blur(10px);
