@@ -5,7 +5,7 @@
     padding: 0;
 }
 body {
-    background: url(images/bg.jpg) no-repeat center center fixed;
+    background: url(../images/bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -36,8 +36,20 @@ header {
     gap: 32px;
     background-color: #2e3440bb;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: sticky;
     z-index: 100;
+}
+.content {
+    margin: 128px;
+    padding: 16px;
+    font-size: 24px;
+    background-color: #2e3440bb;
+    color: #ECEFF4;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: fit-content;
 }
 .current {
     color: #88C0D0;
@@ -50,7 +62,6 @@ header {
 .navlinks {
     list-style-type: none;
 }
-
 .navlinks li {
     display: inline-block;
 }
