@@ -40,6 +40,7 @@ header {
     gap: 32px;
     background-color: #2e3440bb;
     backdrop-filter: blur(10px);
+    overflow: auto;
 }
 
 .navlinks {
