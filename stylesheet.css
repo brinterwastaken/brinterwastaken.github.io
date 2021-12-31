@@ -1,1 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@200&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    background: url(images/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+* {
+    font-family: Montserrat;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+li, a{
+    animation: HoverFadeOut 250ms;
+    color: #ECEFF4;
+    background: none;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 2px;
+}
+a:hover {
+    animation: HoverFadeIn 250ms;
+    color: #5E81AC;
+    background: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 24px 5%;
+    gap: 32px;
+    background-color: #2e3440bb;
+    backdrop-filter: blur(10px);
+}
+
+.navlinks {
+    list-style-type: none;
+}
+
+.navlinks li {
+    display: inline-block;
+}
+@keyframes HoverFadeIn {
+    0% {color: #ECEFF4}
+    100% {color: #5E81AC}
+}
+@keyframes HoverFadeOut {
+    100% {color: #ECEFF4}
+    0% {color: #5E81AC}
+}
