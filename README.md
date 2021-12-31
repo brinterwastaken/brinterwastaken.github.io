@@ -1,3 +1,1 @@
-# xXTgamerXx.github.io
-
-my site... it sucks.
+# This is my homepage (Work in progress)
