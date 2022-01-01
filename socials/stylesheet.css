@@ -1,1 +1,42 @@
 @import url('../stylesheet.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.heading {
+    text-align: center;
+    margin: 36px;
+    font-size: 24px;
+    color: #eceff4;
+}
+.icon {
+    height: 96px;
+    width: 96px;
+    margin: auto;
+    border-radius: 50%;
+}
+.link {
+    width: 512px;
+    height: 64px;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 24px;
+    background-color: #2e3440bb;
+    color: #eceff4;
+    border: none;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: transform 200ms;
+}
+.link:hover {
+    transform: scale(110%, 110%);
+    transition: transform 200ms;
+}

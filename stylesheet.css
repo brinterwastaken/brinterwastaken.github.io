@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@font-face {
+    font-family: 'NerdFontsSymbols Nerd Font';
+    /* @TODO you need to adjust the path to the font: */
+    src: url("./fonts/nerdfont-symbols.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+.nf, .nerd-font, .nerd-fonts {
+    font-family: 'NerdFontsSymbols Nerd Font';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 32px;
+    /* Better Font Rendering (from devicons, et al) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 * {
     font-family: Montserrat;
     margin: 0;
