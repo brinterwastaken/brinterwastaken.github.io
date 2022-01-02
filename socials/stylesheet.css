@@ -49,6 +49,24 @@
         height: 48px;
     }
 }
+@media only screen and (max-width: 300px) {
+    .content {
+        display: none;
+    }
+    .error {
+        display: block; 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: red;
+        background-color: #2e3440bb;
+        padding: 10px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+    }
+}
 @media only screen and (max-height: 720px) {
     .icon {
         display: none;
