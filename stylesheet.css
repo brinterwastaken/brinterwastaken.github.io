@@ -85,3 +85,37 @@ header {
     100% {color: #ECEFF4}
     0% {color: #5E81AC}
 }
+.menu {
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    .other {
+        display: none;
+    }
+    .current {
+        display: block;
+    }
+    nav {
+        transition: width 200ms;
+    }
+    .menu-placeholder {
+        display: none;
+    }
+    .menu {
+        display: block;
+        background-color: #00000000;
+        border: none;
+    }
+    a.menu-icon {
+        font-family: 'NerdFontsSymbols Nerd Font';
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 36px;
+        font-size: 36px;
+        /* Better Font Rendering (from devicons, et al) */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
