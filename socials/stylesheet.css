@@ -13,8 +13,8 @@
 }
 .heading {
     text-align: center;
-    margin: 36px;
-    font-size: 24px;
+    margin: 28px;
+    font-size: 20px;
     color: #eceff4;
 }
 .icon {
@@ -24,19 +24,24 @@
     border-radius: 50%;
 }
 .link {
-    width: 512px;
-    height: 64px;
+    width: 480px;
+    height: 48px;
     border-radius: 10px;
     margin: 5px;
-    font-size: 24px;
+    font-size: 20px;
     background-color: #2e3440bb;
     color: #eceff4;
     border: none;
     backdrop-filter: blur(10px);
     text-align: center;
-    transition: transform 200ms;
+    transition: transform 200ms, width 200ms;
 }
 .link:hover {
     transform: scale(110%, 110%);
-    transition: transform 200ms;
+}
+@media only screen and (max-width: 550px) {
+    .link {
+        width: 85vw;
+        height: 48px;
+    }
 }
