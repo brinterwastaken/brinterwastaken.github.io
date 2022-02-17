@@ -2,33 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./images/logo.jpg" type="image/jpeg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>Home - xXTgamerXx</title>
+    <title>Trinethr - Personal Website</title>
+    <link rel="stylesheet" href="./public/style.css">
+    <script defer src="src/main.js"></script>
 </head>
-<body>
-    <script src="header-bar.js"></script>
-    <div>
-        <header>
-            <a href="#"><img class="logo" src="images/logo.jpg" alt="logo"></a>
-            <nav>
-                <ul class="navlinks">
-                    <li><a class="current" href="#">Home</a></li>
-                    <li><a class="other" href="about/">About</a></li>
-                    <li><a class="other" href="socials/">Socials</a></li>
-                    <li><a class="other" href="https://github.com/xXTgamerXx/">Projects</a></li>
-                    <li><a class="other" href="https://www.youtube.com/channel/UC_LkUD6Q9O97llYqGFpjhPQ">YouTube</a></li>
-                </ul>
-            </nav>
-            <button class="menu">
-                <a class="menu-icon">
-                    
-                </a>
-            </button>
-            <br class="menu-placeholder">
-        </header>
-    </div>
-</body>
+    <body class="dark:bg-slate-900 bg-slate-300 transition-all">
+        <div id="navbar" >
+            <div id="header-content">
+                <div id="linkbtn1" class="linkbtn" onclick="goToSection('home')">Home</div>
+                <div id="linkbtn2" class="linkbtn" onclick="goToSection('projects')">Projects</div>
+                <div id="linkbtn3" class="linkbtn" onclick="goToSection('socials')">Socials</div>
+                <div id="linkbtn4" class="bi cursor-pointer hover:text-green-500" onclick="window.open('https://www.github.com/xXTgamerXx').focus();">&#xF3ED</div>
+                <div id="linkbtn5" class="bi cursor-pointer hover:text-red-500" onclick="window.open('https://www.youtube.com/channel/UC_LkUD6Q9O97llYqGFpjhPQ').focus();">&#xF62B</div>
+                <div id="themeswitcher" class="bi"></div>
+            </div>
+            <div id="mobile-header">
+                <div id="menubtn" class="bi" onclick="toggleMenu()">&#xF5D4</div>
+            </div>
+        </div>
+        <div id="menu">
+            <div id="menu-links" class="flex flex-col text-center drop-shadow-xl">
+                <div id="linkbtn1" class="linkbtn" onclick="goToSection('home')">Home</div>
+                <div id="linkbtn2" class="linkbtn" onclick="goToSection('projects')">Projects</div>
+                <div id="linkbtn3" class="linkbtn" onclick="goToSection('socials')">Socials</div>
+            </div>
+            <div id="menu-icons" class="flex flex-row p-5 gap-5 justify-center">
+                <div id="linkbtn4" class="bi cursor-pointer hover:text-green-500" onclick="window.open('https://www.github.com/xXTgamerXx').focus();">&#xF3ED</div>
+                <div id="linkbtn5" class="bi cursor-pointer hover:text-red-500" onclick="window.open('https://www.youtube.com/channel/UC_LkUD6Q9O97llYqGFpjhPQ').focus();">&#xF62B</div>
+                <div id="themeswitcher2" class="bi"></div>
+            </div>
+        </div>
+        <div class="content" id="content">
+            
+            <div id="home">
+                <br><br><br><br><br>
+                <div class="flex home-flex">
+                    <img src="./src/pfp.png" class="pfp">
+                    <div>
+                        <h1 class="myname font-bold text-4xl">Hello, I'm Trinethr.</h1>
+                        <p>I like frontend development and UI customization.</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis rerum qui impedit expedita assumenda, consequatur, et nisi voluptatem ipsa nostrum minus alias, eligendi porro dolorum facilis perferendis. Quasi, at iure.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quasi, voluptates deserunt officia totam atque! Iure, dolorum neque provident voluptatem dolore voluptates fuga est autem? Aperiam praesentium tempora omnis cupiditate?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam assumenda, nihil, rerum minima molestiae quam at sit labore harum, ea nostrum beatae odio nemo! Eligendi et eum dolorum consectetur ad.</p>
+            <div id="about">
+
+            </div>
+        </div>
+    </body>
 </html>

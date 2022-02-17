@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+@font-face {
+    font-family: "bootstrap-icons";
+    src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/fonts/bootstrap-icons.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/fonts/bootstrap-icons.woff") format("woff");
+}
+html {
+    scroll-behavior: smooth;
+}
+* {
+    @apply text-slate-900 dark:text-slate-100 transition-all;
+    font-family: 'Roboto', sans-serif;
+}
+.bi {
+    font-family: 'bootstrap-icons';
+    user-select: none;
+    -webkit-user-select: none;
+    padding: 0.1em;
+}
+#navbar {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999;
+    top: 0;
+    left: 0;
+    position: fixed;
+    @apply bg-slate-200 dark:bg-slate-800 h-24 drop-shadow-xl bg-opacity-50 dark:bg-opacity-50 flex transition-all;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 3em;
+}
+#header-content {
+    display: flex;
+    gap: 0.75em;
+    font-size: 24px;
+}
+#mobile-header {
+    display: none;
+}
+.linkbtn {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0.5rem 0.75rem;
+    @apply hover:bg-slate-100 bg-opacity-5 dark:bg-opacity-20 rounded-lg hover:shadow-lg;
+}
+.content {
+    margin: 0em 3em;
+    font-size: 20px;
+}
+.home-flex {
+    align-items: center;
+    gap: 1.5em;
+}
+.pfp {
+    border-radius: 50%;
+    max-height: 256px;
+    width: 256px;
+    box-shadow: 0em 0.5em 2.5em rgba(0, 0, 0, 0.5);
+}
+.pfp:hover {
+    transform: scale(105%);
+    box-shadow: 0em 0.5em 3em rgba(0, 0, 0, 0.5);
+}
+#menu {
+    display: none;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 96px;
+    margin: 0.75rem;
+    width: calc(100vw - 1.5rem);
+    padding: 0.75rem;
+    font-size: 24px;
+    border-radius: 0.5em;
+    @apply bg-slate-200 dark:bg-slate-800 bg-opacity-50 dark:bg-opacity-50 transition-all;
+}
+@media screen and (max-width: 600px) {
+    #header-content {
+        display: none;
+    }
+    .home-flex {
+        flex-direction: column;
+    }
+    #mobile-header {
+        display: block;
+        font-size: 48px;
+        line-height: 50%;
+        padding: 5px;
+        @apply hover:bg-slate-100 bg-opacity-5 dark:bg-opacity-20 rounded-lg hover:shadow-lg;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    body {
+        scrollbar-width: none;
+    }
+}
