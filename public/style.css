@@ -505,18 +505,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\.\.\/src\/imgs\/doapp\.png\'\)\] {
-  background-image: url('../src/imgs/doapp.png');
-}
-
-.bg-\[url\(\'\.\.\/src\/imgs\/nord-i3\.jpg\'\)\] {
-  background-image: url('../src/imgs/nord-i3.jpg');
-}
-
-.bg-\[url\(\'\.\.\/src\/imgs\/fluent-startpage\.png\'\)\] {
-  background-image: url('../src/imgs/fluent-startpage.png');
-}
-
 .p-5 {
   padding: 1.25rem;
 }
@@ -713,6 +701,18 @@ html {
 
 .card {
   cursor: pointer;
+}
+
+.bg-doapp {
+  background-image: url('../src/imgs/doapp.png');
+}
+
+.bg-i3 {
+  background-image: url('../src/imgs/nord-i3.jpg');
+}
+
+.bg-startpage {
+  background-image: url('../src/imgs/fluent-startpage.png');
 }
 
 .cardcontent {
