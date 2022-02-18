@@ -496,9 +496,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 1.25rem;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .bg-slate-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.bg-\[url\(\'\/src\/imgs\/doapp\.png\'\)\] {
+  background-image: url('/src/imgs/doapp.png');
+}
+
+.bg-\[url\(\'\/src\/imgs\/nord-i3\.jpg\'\)\] {
+  background-image: url('/src/imgs/nord-i3.jpg');
+}
+
+.bg-\[url\(\'\/src\/imgs\/fluent-startpage\.png\'\)\] {
+  background-image: url('/src/imgs/fluent-startpage.png');
 }
 
 .p-5 {
@@ -512,6 +528,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -571,8 +592,8 @@ html {
 }
 
 #navbar {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   z-index: 999;
   top: 0;
   left: 0;
@@ -619,7 +640,7 @@ html {
   font-size: 18px;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
-  --tw-bg-opacity: 0.05;
+  --tw-bg-opacity: 0.1;
 }
 
 .linkbtn:hover {
@@ -634,9 +655,85 @@ html {
   --tw-bg-opacity: 0.2;
 }
 
+#menu {
+  display: none;
+  z-index: 999;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  position: fixed;
+  top: 96px;
+  margin: 0.75rem;
+  width: calc(100vw - 1.5rem);
+  padding: 0.75rem;
+  font-size: 24px;
+  border-radius: 0.5rem;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.5;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.dark #menu {
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.5;
+}
+
 .content {
   margin: 0em 3em;
   font-size: 20px;
+}
+
+.card-box {
+  margin: 2em 0;
+  gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  box-shadow: 0 5px 20px 10px #00000055;
+  background-position: center;
+  background-size: cover;
+  max-width: 420px;
+  font-size: 1em;
+  line-height: 200%;
+  align-items: center;
+  border-radius: 0.75rem;
+  --tw-bg-opacity: 0.5;
+  text-align: center;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.dark .card {
+  --tw-bg-opacity: 0.5;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.cardcontent {
+  box-sizing: border-box;
+  height: 101%;
+  width: 100%;
+  padding: 0.75em;
+  border-radius: 0.75rem;
+  --tw-backdrop-blur: blur(24px);
+  --tw-backdrop-brightness: brightness(.5);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.cardcontent p {
+  --tw-text-opacity: 1;
+  color: rgb(248 250 252 / var(--tw-text-opacity));
+}
+
+.card:hover {
+  transform: scale(105%);
 }
 
 .home-flex {
@@ -654,30 +751,6 @@ html {
 .pfp:hover {
   transform: scale(105%);
   box-shadow: 0em 0.5em 3em rgba(0, 0, 0, 0.5);
-}
-
-#menu {
-  display: none;
-  z-index: 999;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  position: fixed;
-  top: 96px;
-  margin: 0.75rem;
-  width: calc(100vw - 1.5rem);
-  padding: 0.75rem;
-  font-size: 24px;
-  border-radius: 0.5em;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.5;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.dark #menu {
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.5;
 }
 
 @media screen and (max-width: 600px) {
@@ -725,6 +798,10 @@ html {
 
   body {
     scrollbar-width: none;
+  }
+
+  .card-box {
+    flex-direction: column;
   }
 }
 

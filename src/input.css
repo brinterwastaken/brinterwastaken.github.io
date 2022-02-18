@@ -22,8 +22,8 @@ html {
     padding: 0.1em;
 }
 #navbar {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 999;
     top: 0;
     left: 0;
@@ -48,11 +48,53 @@ html {
     cursor: pointer;
     font-size: 18px;
     padding: 0.5rem 0.75rem;
-    @apply hover:bg-slate-100 bg-opacity-5 dark:bg-opacity-20 rounded-lg hover:shadow-lg;
+    @apply hover:bg-slate-100 bg-opacity-10 dark:bg-opacity-20 rounded-lg hover:shadow-lg;
+}
+#menu {
+    display: none;
+    z-index: 999;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    position: fixed;
+    top: 96px;
+    margin: 0.75rem;
+    width: calc(100vw - 1.5rem);
+    padding: 0.75rem;
+    font-size: 24px;
+    @apply  rounded-lg bg-slate-200 dark:bg-slate-800 bg-opacity-50 dark:bg-opacity-50 transition-all;
 }
 .content {
     margin: 0em 3em;
     font-size: 20px;
+}
+.card-box {
+    margin: 2em 0;
+    gap: 1em;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    box-shadow: 0 5px 20px 10px #00000055;
+    background-position: center;
+    background-size: cover;
+    max-width: 420px;
+    font-size: 1em;
+    line-height: 200%;
+    @apply text-center items-center rounded-xl bg-opacity-50 dark:bg-opacity-50 transition-all;
+    cursor: pointer;
+}
+.cardcontent {
+    box-sizing: border-box;
+    height: 101%;
+    width: 100%;
+    padding: 0.75em;
+    @apply backdrop-brightness-50 backdrop-blur-xl rounded-xl;
+}
+.cardcontent p {
+    @apply text-slate-50;
+}
+.card:hover {
+    transform: scale(105%);
 }
 .home-flex {
     align-items: center;
@@ -67,20 +109,6 @@ html {
 .pfp:hover {
     transform: scale(105%);
     box-shadow: 0em 0.5em 3em rgba(0, 0, 0, 0.5);
-}
-#menu {
-    display: none;
-    z-index: 999;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    position: fixed;
-    top: 96px;
-    margin: 0.75rem;
-    width: calc(100vw - 1.5rem);
-    padding: 0.75rem;
-    font-size: 24px;
-    border-radius: 0.5em;
-    @apply bg-slate-200 dark:bg-slate-800 bg-opacity-50 dark:bg-opacity-50 transition-all;
 }
 @media screen and (max-width: 600px) {
     #header-content {
@@ -101,5 +129,8 @@ html {
     }
     body {
         scrollbar-width: none;
+    }
+    .card-box {
+        flex-direction: column;
     }
 }
