@@ -83,6 +83,17 @@ html {
     @apply text-center items-center rounded-xl bg-opacity-50 dark:bg-opacity-50 transition-all;
     cursor: pointer;
 }
+.bg-doapp {
+    background-image: url('../src/imgs/doapp.png');
+}
+  
+.bg-i3 {
+    background-image: url('../src/imgs/nord-i3.jpg');
+}
+  
+.bg-startpage {
+    background-image: url('../src/imgs/fluent-startpage.png');
+}
 .cardcontent {
     box-sizing: border-box;
     height: 101%;
