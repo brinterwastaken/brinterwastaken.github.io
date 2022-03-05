@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 @font-face {
     font-family: "bootstrap-icons";
@@ -80,29 +81,26 @@ html {
     max-width: 420px;
     font-size: 1em;
     line-height: 200%;
-    @apply text-center items-center rounded-xl bg-opacity-50 dark:bg-opacity-50 transition-all;
+    @apply text-center items-center rounded-xl transition-all;
     cursor: pointer;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 0.75em;
+}
+.card p {
+    @apply text-slate-50;
 }
 .bg-doapp {
-    background-image: url('../src/imgs/doapp.png');
+    background-image: url('../src/imgs/doapp-blurred.png');
 }
   
 .bg-i3 {
-    background-image: url('../src/imgs/nord-i3.jpg');
+    background-image: url('../src/imgs/nord-i3-blurred.jpg');
 }
   
 .bg-startpage {
-    background-image: url('../src/imgs/fluent-startpage.png');
-}
-.cardcontent {
-    box-sizing: border-box;
-    height: 101%;
-    width: 100%;
-    padding: 0.75em;
-    @apply backdrop-brightness-50 backdrop-blur-xl rounded-xl;
-}
-.cardcontent p {
-    @apply text-slate-50;
+    background-image: url('../src/imgs/fluent-startpage-blurred.png');
 }
 .card:hover {
     transform: scale(105%);
@@ -120,6 +118,36 @@ html {
 .pfp:hover {
     transform: scale(105%);
     box-shadow: 0em 0.5em 3em rgba(0, 0, 0, 0.5);
+}
+.parallax {
+  background-image: url("/src/imgs/parallax-scroll.jpg");
+
+  min-height: 100vh;
+  min-width: 100%;
+  position: absolute;
+  margin-top: 100px;
+  left: 0;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.socialbtn {
+    @apply bg-slate-200 dark:bg-slate-800 p-2 backdrop-blur-xl rounded-xl transition-all text-center font-sans;
+    --tw-bg-opacity: 0.65 !important; 
+    width: 20em;
+    font-size: 25px;
+    cursor: pointer;
+}
+.socialbtn:hover {
+    transform: scale(110%);
+}
+.socialbtn::before {
+    content: var(--socialicon);
+    position: absolute;
+    left: 0.75em;
+    font-family: "bootstrap-icons";
 }
 @media screen and (max-width: 600px) {
     #header-content {
@@ -143,5 +171,8 @@ html {
     }
     .card-box {
         flex-direction: column;
+    }
+    .socialbtn {
+        width: 15em;
     }
 }

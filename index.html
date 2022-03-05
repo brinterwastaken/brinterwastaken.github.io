@@ -13,7 +13,7 @@
             <div id="header-content">
                 <div id="linkbtn1" class="linkbtn" onclick="goToSection('home')">Home</div>
                 <div id="linkbtn2" class="linkbtn" onclick="goToSection('projects')">Projects</div>
-                <div id="linkbtn3" class="linkbtn" onclick="goToSection('socials')">Socials</div>
+                <div id="linkbtn3" class="linkbtn" onclick="goToSection('links')">Links</div>
                 <div id="linkbtn4" class="bi cursor-pointer hover:text-green-500" onclick="window.open('https://www.github.com/xXTgamerXx').focus();">&#xF3ED</div>
                 <div id="linkbtn5" class="bi cursor-pointer hover:text-red-500" onclick="window.open('https://www.youtube.com/channel/UC_LkUD6Q9O97llYqGFpjhPQ').focus();">&#xF62B</div>
                 <div id="themeswitcher" class="bi"></div>
@@ -26,7 +26,7 @@
             <div id="menu-links" class="flex flex-col text-center drop-shadow-xl">
                 <div id="linkbtn1" class="linkbtn" onclick="goToSection('home')">Home</div>
                 <div id="linkbtn2" class="linkbtn" onclick="goToSection('projects')">Projects</div>
-                <div id="linkbtn3" class="linkbtn" onclick="goToSection('socials')">Socials</div>
+                <div id="linkbtn3" class="linkbtn" onclick="goToSection('links')">Links</div>
             </div>
             <div id="menu-icons" class="flex flex-row p-5 gap-5 justify-center">
                 <div id="linkbtn4" class="bi cursor-pointer hover:text-green-500" onclick="window.open('https://www.github.com/xXTgamerXx').focus();">&#xF3ED</div>
@@ -51,31 +51,27 @@
                 <h1 class="font-bold text-4xl text-center">My Projects</h1>
                 <div class="card-box justify-center">
                     <div class="card bg-doapp" onclick="window.open('https://www.github.com/xXTgamerXx/do.app').focus();">
-                        <div class="cardcontent">
-                            <img class="rounded-lg" src="./src/imgs/doapp.png">
-                            <p>Do.app - A simple, customizable Todo list app, made with Electron and Glasstron.
-                            </p>
-                        </div>
+                        <img class="rounded-lg" src="./src/imgs/doapp.png">
+                        <p>Do.app - A simple, customizable Todo list app, made with Electron and Glasstron.</p>
                     </div>
                     <div class="card bg-i3" onclick="window.open('https://www.github.com/xXTgamerXx/nord-setup-dotfiles').focus();">
-                        <div class="cardcontent">
-                            <img class="rounded-lg" src="./src/imgs/nord-i3.jpg">
-                            <p>i3wm Nord Dotfiles - The collection of configuration files for my nord themed i3 setup</p>
-                        </div>
+                        <img class="rounded-lg" src="./src/imgs/nord-i3.jpg">
+                        <p>i3wm Nord Dotfiles - The collection of configuration files for my nord themed i3 setup</p>
                     </div>
                     <div class="card bg-startpage" onclick="window.open('https://www.github.com/xXTgamerXx/fluent-startpage').focus();">
-                        <div class="cardcontent">
-                            <img class="rounded-lg" src="./src/imgs/fluent-startpage.png">
-                            <p>Fluent Startpage - A fluent design style startpage made with html css and javascript.</p>
-                        </div>
+                        <img class="rounded-lg" src="./src/imgs/fluent-startpage.png">
+                        <p>Fluent Startpage - A fluent design style startpage made with html css and javascript.</p>
                     </div>
                 </div>
-                
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis quia consequuntur culpa inventore nisi velit tempore temporibus, commodi error, maxime veniam quo odio. Quia distinctio architecto ad a ea!</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat quod molestiae cumque facere autem odit deleniti corporis quas at, asperiores iste hic soluta expedita praesentium doloremque architecto reiciendis. Fuga, exercitationem.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quasi, voluptates deserunt officia totam atque! Iure, dolorum neque provident voluptatem dolore voluptates fuga est autem? Aperiam praesentium tempora omnis cupiditate?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam assumenda, nihil, rerum minima molestiae quam at sit labore harum, ea nostrum beatae odio nemo! Eligendi et eum dolorum consectetur ad.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex consectetur cumque recusandae delectus dolores officiis fuga nesciunt optio suscipit ut vero officia rem odit nemo sunt assumenda quo, error inventore!</p>
+                <div class="parallax flex items-center justify-center flex-col gap-2" id="links">
+                    <h1 style="font-size: 5rem !important; color: #ffffff">Links</h1>
+                    <div class="socialbtn" style="--socialicon: '\F62B';" onclick="window.open('https://www.youtube.com/channel/UC_LkUD6Q9O97llYqGFpjhPQ').focus();">Youtube</div>
+                    <div class="socialbtn" style="--socialicon: '\F437';" onclick="window.open('https://www.instagram.com/brin._.bonut/').focus();">Instagram</div>
+                    <div class="socialbtn" style="--socialicon: '\F3ED';" onclick="window.open('https://www.github.com/xXTgamerXx/').focus();">Github</div>
+                    <div class="socialbtn" style="--socialicon: '\F666';" onclick="window.open('https://www.github.com/xXTgamerXx/').focus();">Spotify</div>
+                    <div class="socialbtn" style="--socialicon: '\F429';" onclick="window.open('https://www.github.com/xXTgamerXx/').focus();">DeviantArt</div>
+                    <div class="socialbtn" style="--socialicon: '\F650';" onclick="window.open('https://www.github.com/xXTgamerXx/').focus();">Reddit</div>                    
+                </div>
             </div>
         </div>
     </body>

@@ -488,12 +488,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-direction: column;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .justify-center {
   justify-content: center;
 }
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .rounded-lg {
@@ -539,6 +547,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
@@ -688,48 +698,32 @@ html {
   line-height: 200%;
   align-items: center;
   border-radius: 0.75rem;
-  --tw-bg-opacity: 0.5;
   text-align: center;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.dark .card {
-  --tw-bg-opacity: 0.5;
-}
-
-.card {
   cursor: pointer;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 0.75em;
+}
+
+.card p {
+  --tw-text-opacity: 1;
+  color: rgb(248 250 252 / var(--tw-text-opacity));
 }
 
 .bg-doapp {
-  background-image: url('../src/imgs/doapp.png');
+  background-image: url('../src/imgs/doapp-blurred.png');
 }
 
 .bg-i3 {
-  background-image: url('../src/imgs/nord-i3.jpg');
+  background-image: url('../src/imgs/nord-i3-blurred.jpg');
 }
 
 .bg-startpage {
-  background-image: url('../src/imgs/fluent-startpage.png');
-}
-
-.cardcontent {
-  box-sizing: border-box;
-  height: 101%;
-  width: 100%;
-  padding: 0.75em;
-  border-radius: 0.75rem;
-  --tw-backdrop-blur: blur(24px);
-  --tw-backdrop-brightness: brightness(.5);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-.cardcontent p {
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity));
+  background-image: url('../src/imgs/fluent-startpage-blurred.png');
 }
 
 .card:hover {
@@ -751,6 +745,57 @@ html {
 .pfp:hover {
   transform: scale(105%);
   box-shadow: 0em 0.5em 3em rgba(0, 0, 0, 0.5);
+}
+
+.parallax {
+  background-image: url("/src/imgs/parallax-scroll.jpg");
+  min-height: 100vh;
+  min-width: 100%;
+  position: absolute;
+  margin-top: 100px;
+  left: 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.socialbtn {
+  border-radius: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+  padding: 0.5rem;
+  text-align: center;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --tw-backdrop-blur: blur(24px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.dark .socialbtn {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.socialbtn {
+  --tw-bg-opacity: 0.65 !important;
+  width: 20em;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.socialbtn:hover {
+  transform: scale(110%);
+}
+
+.socialbtn::before {
+  content: var(--socialicon);
+  position: absolute;
+  left: 0.75em;
+  font-family: "bootstrap-icons";
 }
 
 @media screen and (max-width: 600px) {
@@ -802,6 +847,10 @@ html {
 
   .card-box {
     flex-direction: column;
+  }
+
+  .socialbtn {
+    width: 15em;
   }
 }
 
