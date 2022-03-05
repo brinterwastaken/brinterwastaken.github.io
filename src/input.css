@@ -5,9 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 @font-face {
-    font-family: "bootstrap-icons";
+    font-family: "bootstrap-icons";    
     src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/fonts/bootstrap-icons.woff2") format("woff2"),
     url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/fonts/bootstrap-icons.woff") format("woff");
+}
+@font-face {
+    font-family: "tabler-icons";
+    src: url("/src/tabler-icons/tabler-icons.woff2") format("woff2"), url("/src/tabler-icons/tabler-icons.woff") format("woff"), url("/src/tabler-icons/tabler-icons.ttf") format("ttf");
 }
 html {
     scroll-behavior: smooth;
@@ -137,6 +141,7 @@ html {
     @apply bg-slate-200 dark:bg-slate-800 p-2 backdrop-blur-xl rounded-xl transition-all text-center font-sans;
     --tw-bg-opacity: 0.65 !important; 
     width: 20em;
+    height: 54px;
     font-size: 25px;
     cursor: pointer;
 }
@@ -146,8 +151,10 @@ html {
 .socialbtn::before {
     content: var(--socialicon);
     position: absolute;
-    left: 0.75em;
-    font-family: "bootstrap-icons";
+    left: 0.5em;
+    line-height: 100%;
+    font-size: 38px;
+    font-family: "tabler-icons";
 }
 @media screen and (max-width: 600px) {
     #header-content {
