@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 @font-face {
     font-family: "bootstrap-icons";    
@@ -17,8 +15,7 @@ html {
     scroll-behavior: smooth;
 }
 * {
-    @apply text-slate-900 dark:text-slate-100 transition-all;
-    font-family: 'Roboto', sans-serif;
+    @apply text-slate-900 dark:text-slate-100 transition-all font-poppins;
 }
 .bi {
     font-family: 'bootstrap-icons';
@@ -87,8 +84,7 @@ html {
     line-height: 200%;
     @apply text-center items-center rounded-xl transition-all;
     cursor: pointer;
-    box-sizing: border-box;
-    height: 100%;
+    height: 400px;
     width: 100%;
     padding: 0.75em;
 }
@@ -138,15 +134,17 @@ html {
   background-size: cover;
 }
 .socialbtn {
-    @apply bg-slate-200 dark:bg-slate-800 p-2 backdrop-blur-xl rounded-xl transition-all text-center font-sans;
+    @apply bg-slate-200 dark:bg-slate-800 p-2 backdrop-blur-xl rounded-xl transition-all text-center font-comfortaa;
     --tw-bg-opacity: 0.65 !important; 
     width: 20em;
     height: 54px;
-    font-size: 25px;
+    font-size: 20px;
+    line-height: 200%;
     cursor: pointer;
 }
 .socialbtn:hover {
-    transform: scale(110%);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px #00000055;
 }
 .socialbtn::before {
     content: var(--socialicon);
@@ -155,6 +153,12 @@ html {
     line-height: 100%;
     font-size: 38px;
     font-family: "tabler-icons";
+}
+footer {
+    bottom: -240px;
+    height: 240px;
+    width: 100%;
+    @apply absolute bg-slate-400 dark:bg-slate-800 text-slate-700 dark:text-slate-400 font-poppins flex flex-col justify-center text-center p-5; 
 }
 @media screen and (max-width: 600px) {
     #header-content {
@@ -181,5 +185,12 @@ html {
     }
     .socialbtn {
         width: 15em;
+    }
+    footer {
+        bottom: -580px;
+        height: 580px;
+    }
+    footer .info {
+        flex-direction: column;
     }
 }
