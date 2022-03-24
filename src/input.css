@@ -102,6 +102,9 @@ html {
 .bg-startpage {
     background-image: url('../src/imgs/fluent-startpage-blurred.png');
 }
+.bg-nvim {
+    background-image: url('../src/imgs/everforest-nvim-blurred.png');
+}
 .card:hover {
     transform: scale(105%);
 }

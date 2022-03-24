@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.22 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -529,10 +529,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 1.25rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
 .p-4 {
   padding: 1rem;
 }
@@ -773,6 +769,10 @@ html {
 
 .bg-startpage {
   background-image: url('../src/imgs/fluent-startpage-blurred.png');
+}
+
+.bg-nvim {
+  background-image: url('../src/imgs/everforest-nvim-blurred.png');
 }
 
 .card:hover {
