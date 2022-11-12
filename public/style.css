@@ -863,6 +863,10 @@ html {
   background-image: url('../src/imgs/everforest-nvim-blurred.png');
 }
 
+.bg-donut {
+  background-image: url('../src/imgs/spacedonut-blurred.png');
+}
+
 .card:hover {
   transform: scale(105%);
 }

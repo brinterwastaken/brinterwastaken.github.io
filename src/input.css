@@ -91,6 +91,7 @@ html {
 .card p {
     @apply text-slate-50;
 }
+
 .bg-doapp {
     background-image: url('../src/imgs/doapp-blurred.png');
 }
@@ -105,6 +106,11 @@ html {
 .bg-nvim {
     background-image: url('../src/imgs/everforest-nvim-blurred.png');
 }
+
+.bg-donut {
+    background-image: url('../src/imgs/spacedonut-blurred.png');
+}
+
 .card:hover {
     transform: scale(105%);
 }
