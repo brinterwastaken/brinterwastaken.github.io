@@ -8,8 +8,17 @@
 </head>
 <body>
     If the redirect fails, <a href="https://github.com/xXTgamerXx">click here</a>
+    <div id="repoerror" style="color:red"></div>
     <script>
-        location.href = "https://github.com/xXTgamerXx";  
+        const urlParams = new URLSearchParams(window.location.search);
+        var reponame = (urlParams.get('repo'))
+        if (reponame != null && reponame != "") {
+            location.href = "https://github.com/xXTgamerXx/" + reponame;
+        } else if (reponame == null) {
+            location.href = "https://github.com/xXTgamerXx";
+        } else {
+            document.querySelector("#repoerror").innerText = "Error - no repository specified."
+        }
     </script>
 </body>
 </html>
