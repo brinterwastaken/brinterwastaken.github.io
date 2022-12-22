@@ -1,0 +1,53 @@
+@import url("https://api.fontshare.com/v2/css?f[]=outfit@1&f[]=satoshi@1&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  font-family: Outfit;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+code {
+  font-family: 'Space Mono';
+}
+
+body {
+  background-color: #121212;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#threejs-container {
+  position: fixed;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding-inline: 10vw;
+}
+canvas {
+  width: 500px;
+  height: 500px;
+}
+@media screen and (max-width: 910px) {
+  #threejs-container {
+    justify-content: center;
+    padding-inline: 0;
+    padding-bottom: 15rem;
+  }
+}
