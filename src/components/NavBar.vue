@@ -25,9 +25,9 @@
   padding: 2rem 4rem;
   display: flex;
   justify-content: space-between;
+  z-index: 100;
 }
 .bar {
-
   border-radius: 1rem;
 
   background: #20202069;

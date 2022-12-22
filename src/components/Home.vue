@@ -2,6 +2,7 @@
   <div id="home">
     <h1>Hello! I'm Trinethr.</h1>
     <code id="basicinfo" ref="basicinfo">Creative frontend developer and artist.</code>
+    <div class="scrollarrow"><i class="fa-solid fa-chevron-down"></i></div>
   </div>
 </template>
 
@@ -35,7 +36,7 @@
 }
 #basicinfo::after {
   content: '';
-  display: inline;
+  display: inline-block;
   position: absolute;
   bottom: 0;
   right: -0.2rem;
@@ -44,9 +45,29 @@
   background: #6874ffee;
   animation: blink 0.7s linear forwards infinite;
 }
+.scrollarrow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 20px;
+  margin-block: 1rem;
+  color: #ffffffaa;
+  animation: arrow 1s linear forwards infinite;
+  transition: color 150ms;
+}
+.scrollarrow:hover {
+  color: #6874ffee;
+}
 @keyframes blink {
   0%,50% {opacity: 0;}
   51%,100% {opacity: 1;}
+}
+@keyframes arrow {
+  0% { bottom: 0 }
+  50% { bottom: -0.5rem }
+  100% { bottom: 0 }
 }
 @media screen and (max-width: 570px) {
   #home h1 {
@@ -54,6 +75,11 @@
   }
   #basicinfo {
     font-size: 1rem;
+  }
+}
+@media screen and (max-width: 770px) {
+  #basicinfo::after {
+    display: none;
   }
 }
 </style>
