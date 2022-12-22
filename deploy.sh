@@ -3,6 +3,7 @@
 yarn build
 cd dist
 echo "" > .nojekyll
+echo "brin.is-a.dev" > CNAME
 
 git init
 git checkout -B main
