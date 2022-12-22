@@ -42,11 +42,13 @@
   padding-inline: 1.5rem;
   font-size: 20px;
 }
+#navbar {
+  user-select: none;
+}
 #navbar a {
   all: unset;
   position: relative;
   cursor: pointer;
-
   transition: color 200ms;
 }
 #navbar a.linktext::after {
