@@ -1,5 +1,5 @@
 <template>
-  <div id="topbar-container">
+  <div id="navbar-container">
     <div class="bar" id="titlebar" ref="titlebar">
       <img src="/pfp.png" alt="">
       <div>Trinethr</div>
@@ -12,11 +12,17 @@
       <a class="linkicon" href="/yt/"><i class="fa-brands fa-youtube"></i></a>
       <a class="linkicon" href="/gh/"><i class="fa-brands fa-github"></i></a>
     </div>
+    <div class="bar" id="mobile-nav"> 
+      <a class="linkicon" href="#home"><i class="fa-solid fa-house"></i></a>
+      <a class="linkicon" href="#projects"><i class="fa-solid fa-code"></i></a>
+      <a class="linkicon" href="#links"><i class="fa-solid fa-link"></i></a>
+      <a class="linkicon" href="#about"><i class="fa-solid fa-circle-info"></i></a>
+    </div>
   </div>
 </template>
 
 <style>
-#topbar-container {
+#navbar-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -45,13 +51,16 @@
 #navbar {
   user-select: none;
 }
-#navbar a {
+#mobile-nav {
+  display: none;
+}
+.bar a {
   all: unset;
   position: relative;
   cursor: pointer;
   transition: color 200ms;
 }
-#navbar a.linktext::after {
+.bar a.linktext::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -62,14 +71,14 @@
   border-radius: 0.125rem;
   transition: width 250ms ease-out, left 250ms ease-out;
 }
-#navbar a.linktext:hover::after {
+.bar a.linktext:hover::after {
   left: 0%;
   width: 100%;
 }
-#navbar a.linktext:active {
+.bar a.linktext:active {
   color: #6f5fff;
 }
-#navbar a.linkicon:hover {
+.bar a.linkicon:hover {
   color: #6f5fff;
 }
 #titlebar {
@@ -85,5 +94,16 @@
 }
 #titlebar div:hover {
   color: #6f5fff;
+}
+@media screen and (max-width: 750px) {
+  #titlebar, #navbar {
+    display: none;
+  }
+  #mobile-nav {
+    display: flex;
+  }
+  #navbar-container {
+    justify-content: center;
+  }
 }
 </style>

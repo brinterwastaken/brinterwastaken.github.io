@@ -16,17 +16,18 @@
 .container {
   z-index: -1;
   position: absolute;
-  margin: auto;
+  margin: 0;
   top: 0;
   left: 0;
   bottom: 0;
-  right: 0;
+  width: 100%;
   overflow: hidden;
 }
 
 .container div{
   position: absolute;
   border-radius: 50%;
+  transition: opacity 100ms;
   animation: gradient 5s infinite;
 }
 
@@ -64,6 +65,32 @@
   content: "";
   height: 100%;
   width: 100%;
-  backdrop-filter: blur(250px);
+  backdrop-filter: blur(150px);
 }
 </style>
+
+<script>
+export default {
+  mounted() {
+    document.onscroll = (ev) => {
+      var scrolldist = window.scrollY/window.innerHeight
+      var newopacity = Math.round((1 - scrolldist)*150)/100 - 0.5
+      newopacity = newopacity <= 0 ? 0 : newopacity
+      Array.from(this.$el.children).forEach((child) => {
+        child.style.opacity = newopacity
+      })
+      newopacity <= 0 ? this.$el.style.backdropFilter = "none" : this.$el.style.backdropFilter = "initial"
+      var scrollarrow = this.$el.parentElement.querySelector(".scrollarrow")
+      if (Math.round((1 - scrolldist)*100)/100 < 0.9) {
+        if (getComputedStyle(scrollarrow).opacity != 0) {
+          scrollarrow.style.opacity = 0
+        }
+      } else {
+        if (getComputedStyle(scrollarrow).opacity == 0) {
+          scrollarrow.style.opacity = 1
+        }
+      }
+    }
+  }
+}
+</script>

@@ -16,7 +16,7 @@ const camera = new PerspectiveCamera( 40, 1, 0.1, 1000 );
 
 const renderer = new WebGLRenderer({
   canvas: document.querySelector('#threejs'),
-  alpha: true
+  alpha: true,
 })
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = PCFSoftShadowMap;
@@ -26,10 +26,11 @@ var rendererSize = window.innerWidth >= 500 ? 500 : window.innerWidth;
 renderer.setSize( rendererSize, rendererSize );
 camera.position.setZ(60);
 
+var bonut, icing
 const gltfLoader = new GLTFLoader();
 gltfLoader.load('bonut/bonut.glb', (gltf) => {
-  const bonut = gltf.scene.children.find((child) => child.name === "donut");
-  const icing = gltf.scene.children.find((child) => child.name === "icing");
+  bonut = gltf.scene.children.find((child) => child.name === "donut");
+  icing = gltf.scene.children.find((child) => child.name === "icing");
   bonut.material = new MeshPhysicalMaterial({
     color: 0x6b4d34,
     roughness: 0.5,
@@ -67,14 +68,12 @@ window.onresize = () => {
   renderer.setSize( rendererSize, rendererSize );
 }
 
+
 function animate() {
 
   requestAnimationFrame( animate );
 
   renderer.render( scene, camera );
-
-  var bonut = scene.getObjectByName('bonut');
-  var icing = scene.getObjectByName('icing');
 
   bonut.rotateY(0.0025);
   icing.rotateY(0.0025);
