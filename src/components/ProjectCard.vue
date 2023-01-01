@@ -25,13 +25,14 @@ export default {
 <style>
 .card {
   width: 20rem;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   opacity: 0;
   margin-left: -15vw;
   filter: blur(10px);
   transition: opacity 500ms, margin-left 500ms, filter 500ms;
   background: #ffffff0a;
   border-radius: 1rem;
+  position: relative;
 }
 .card img {
   width: 100%;
@@ -42,6 +43,8 @@ export default {
   margin-block: 0.5rem;
 }
 .card-links {
+  position: absolute;
+  bottom: 1rem;
   display: flex;
   gap: 0.5rem;
 }
