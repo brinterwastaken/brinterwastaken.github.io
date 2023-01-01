@@ -6,9 +6,10 @@ export default {
   },
   data() {
     return {
-      cardimages: ['/imgs/spacedonut.png', '/imgs/doapp.png', '/imgs/everforest-nvim.png', '/imgs/nord-i3.png', '/imgs/fluent-startpage.png'],
-      cardtitles: ['Donut in space', 'Do.app', 'Everforest Neovim', 'Nord i3wm setup', 'Fluent Startpage'],
+      cardimages: ['imgs/wafer-desktop.png','/imgs/spacedonut.png', '/imgs/doapp.png', '/imgs/everforest-nvim.png', '/imgs/nord-i3.png', '/imgs/fluent-startpage.png'],
+      cardtitles: ['Wafer desktop', 'Donut in space', 'Do.app', 'Everforest Neovim', 'Nord i3wm setup', 'Fluent Startpage'],
       carddescs: [
+        'Desktop that looks like a popular operating system named after a fruit, made with Vue.',
         'Three.js project showing a donut floating in space.', 
         'A simple, customizable Todo list app, made with Electron and Glasstron.', 
         'An everforest themed neovim configuration.', 
@@ -16,10 +17,11 @@ export default {
         'A fluent design style startpage made with vanilla html css and js.'
       ],
       cardurls: [
+        'https://brin.is-a.dev/wafer-desktop', 
         'https://brin.is-a.dev/donut-in-space', 
         'https://brin.is-a.dev/fluent-startpage'
       ],
-      cardrepos: ['donut-in-space', 'do.app', 'everforest-neovim', 'nord-setup-dotfiles', 'fluent-startpage']
+      cardrepos: ['wafer-desktop', 'donut-in-space', 'do.app', 'everforest-neovim', 'nord-setup-dotfiles', 'fluent-startpage']
     }
   },
   mounted() {
@@ -42,10 +44,11 @@ export default {
     <code class="blinker description">My personal projects over the years.</code>
     <div id="card-container" ref="cards">
       <ProjectCard :image="cardimages[0]" :title="cardtitles[0]" :desc="carddescs[0]" :repo="cardrepos[0]" :url="cardurls[0]"></ProjectCard>
-      <ProjectCard :image="cardimages[1]" :title="cardtitles[1]" :desc="carddescs[1]" :repo="cardrepos[1]"></ProjectCard>
+      <ProjectCard :image="cardimages[1]" :title="cardtitles[1]" :desc="carddescs[1]" :repo="cardrepos[1]" :url="cardurls[1]"></ProjectCard>
       <ProjectCard :image="cardimages[2]" :title="cardtitles[2]" :desc="carddescs[2]" :repo="cardrepos[2]"></ProjectCard>
       <ProjectCard :image="cardimages[3]" :title="cardtitles[3]" :desc="carddescs[3]" :repo="cardrepos[3]"></ProjectCard>
-      <ProjectCard :image="cardimages[4]" :title="cardtitles[4]" :desc="carddescs[4]" :repo="cardrepos[4]" :url="cardurls[1]"></ProjectCard>
+      <ProjectCard :image="cardimages[4]" :title="cardtitles[4]" :desc="carddescs[4]" :repo="cardrepos[4]"></ProjectCard>
+      <ProjectCard :image="cardimages[5]" :title="cardtitles[5]" :desc="carddescs[5]" :repo="cardrepos[5]" :url="cardurls[2]"></ProjectCard>
     </div>
   </div>
 </template>
@@ -62,7 +65,7 @@ export default {
 }
 .show {
   opacity: 1;
-  margin-left: unset;
+  margin-left: 0;
   filter: none;
 }
 .description {
@@ -72,9 +75,17 @@ export default {
 }
 #card-container {
   margin-top: 2em;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  gap: 2rem;
+}
+@media screen and (min-width: 1200px) {
+  
+  #card-container {
+    margin-top: 4em;
+    gap: 3rem;
+  }
 }
 @media screen and (max-width: 750px) {
   #projects {
@@ -87,9 +98,10 @@ export default {
     font-size: 1rem;
   }
 }
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
   #card-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
 }

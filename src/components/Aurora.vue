@@ -67,20 +67,24 @@
   width: 100%;
   backdrop-filter: blur(150px);
 }
+.container.noblur:after {
+  backdrop-filter: none;
+}
 </style>
 
 <script>
 export default {
   mounted() {
+    var aurorabox = this.$el
     document.onscroll = (ev) => {
       var scrolldist = window.scrollY/window.innerHeight
       var newopacity = Math.round((1 - scrolldist)*150)/100 - 0.5
       newopacity = newopacity <= 0 ? 0 : newopacity
-      Array.from(this.$el.children).forEach((child) => {
+      Array.from(aurorabox.children).forEach((child) => {
         child.style.opacity = newopacity
       })
-      newopacity <= 0 ? this.$el.style.backdropFilter = "none" : this.$el.style.backdropFilter = "initial"
-      var scrollarrow = this.$el.parentElement.querySelector(".scrollarrow")
+      newopacity <= 0 ? aurorabox.classList.add('noblur') : aurorabox.classList.remove('noblur')
+      var scrollarrow = aurorabox.parentElement.querySelector(".scrollarrow")
       if (Math.round((1 - scrolldist)*100)/100 < 0.9) {
         if (getComputedStyle(scrollarrow).opacity != 0) {
           scrollarrow.style.opacity = 0
