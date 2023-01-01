@@ -32,6 +32,7 @@
   display: flex;
   justify-content: space-between;
   z-index: 100;
+  pointer-events: none;
 }
 .bar {
   border-radius: 1rem;
@@ -47,6 +48,8 @@
   align-items: center;
   padding-inline: 1.5rem;
   font-size: 20px;
+
+  pointer-events: auto; 
 }
 #navbar {
   user-select: none;

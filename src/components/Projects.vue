@@ -81,7 +81,6 @@ export default {
   gap: 2rem;
 }
 @media screen and (min-width: 1200px) {
-  
   #card-container {
     margin-top: 4em;
     gap: 3rem;
