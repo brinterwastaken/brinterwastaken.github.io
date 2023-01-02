@@ -85,7 +85,7 @@ export default {
       })
       newopacity <= 0 ? aurorabox.classList.add('noblur') : aurorabox.classList.remove('noblur')
       var scrollarrow = aurorabox.parentElement.querySelector(".scrollarrow")
-      if (Math.round((1 - scrolldist)*100)/100 < 0.9) {
+      if (Math.round((1 - scrolldist)*10)/10 < 0.9) {
         if (getComputedStyle(scrollarrow).opacity != 0) {
           scrollarrow.style.opacity = 0
         }

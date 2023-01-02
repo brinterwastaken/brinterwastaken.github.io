@@ -37,7 +37,7 @@
 .bar {
   border-radius: 1rem;
 
-  background: #20202069;
+  background: #26243369;
   color: #efefef;
   backdrop-filter: blur(15px);
   box-shadow: 0 5px 10px #12121269;

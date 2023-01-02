@@ -16,8 +16,8 @@ export default {
     <h3 class="title">{{ title }}</h3>
     <p class="description">{{ desc }}</p>
     <div class="card-links">
-      <a v-if="repo" :href="'https://github.com/xXTgamerXx/' + repo"><i class="fa-brands fa-github"></i></a>
-      <a v-if="url" :href="url"><i class="fa-solid fa-link"></i></a>
+      <a title="GitHub repository" v-if="repo" :href="'https://github.com/xXTgamerXx/' + repo"><i class="fa-brands fa-github"></i></a>
+      <a title="Website" v-if="url" :href="url"><i class="fa-solid fa-link"></i></a>
     </div>
   </div>
 </template>

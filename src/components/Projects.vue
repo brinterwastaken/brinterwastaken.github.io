@@ -55,7 +55,7 @@ export default {
 
 <style>
 #projects {
-  padding: 6rem;
+  padding: 8rem 6rem;
   overflow-x: hidden;
 }
 #projects h1 {
