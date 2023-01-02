@@ -67,7 +67,7 @@ export default {
 @media screen and (max-width: 500px) {
   .card {
     width: 60vw;
-    padding: 0.8rem;
+  padding: 0.8rem 0.8rem 2.2rem 0.8rem;
   }
 }
 </style>

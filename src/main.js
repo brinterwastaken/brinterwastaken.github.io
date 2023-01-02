@@ -6,7 +6,7 @@ createApp(App).mount('#app')
 
 import './style.css'
 
-import { Scene, PerspectiveCamera, WebGLRenderer, PCFSoftShadowMap, MeshPhysicalMaterial, PointLight, AmbientLight } from 'three'
+import { Scene, PerspectiveCamera, WebGLRenderer, LoadingManager, PCFSoftShadowMap, MeshPhysicalMaterial, PointLight, AmbientLight } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
@@ -27,7 +27,8 @@ renderer.setSize( rendererSize, rendererSize );
 camera.position.setZ(60);
 
 var bonut, icing
-const gltfLoader = new GLTFLoader();
+const manager = new LoadingManager();
+const gltfLoader = new GLTFLoader( manager );
 gltfLoader.load('bonut/bonut.glb', (gltf) => {
   bonut = gltf.scene.children.find((child) => child.name === "donut");
   icing = gltf.scene.children.find((child) => child.name === "icing");
@@ -66,6 +67,7 @@ window.onresize = () => {
   
   var rendererSize = window.innerWidth >= 500 ? 500 : window.innerWidth;
   renderer.setSize( rendererSize, rendererSize );
+  
 }
 
 
@@ -80,4 +82,4 @@ function animate() {
 
 }
     
-animate();
+manager.onLoad = () => {animate()}

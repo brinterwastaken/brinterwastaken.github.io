@@ -90,4 +90,17 @@ export default {
   line-height: 26px;
   content: attr(fonticon);
 }
+@media screen and (max-width: 750px) {
+  #links {
+    padding: 6rem 3.5rem;
+  }
+  #links h1 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  #linkbox li {
+    width: 100%;
+  }
+}
 </style>
