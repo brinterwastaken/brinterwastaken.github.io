@@ -40,7 +40,7 @@ export default {
 
 <template>
   <div id="projects">
-    <h1>Projects</h1>
+    <h1>My Projects</h1>
     <code class="blinker description">My personal projects over the years.</code>
     <div id="card-container" ref="cards">
       <ProjectCard :image="cardimages[0]" :title="cardtitles[0]" :desc="carddescs[0]" :repo="cardrepos[0]" :url="cardurls[0]"></ProjectCard>
@@ -53,7 +53,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 #projects {
   padding: 8rem 6rem;
   overflow-x: hidden;

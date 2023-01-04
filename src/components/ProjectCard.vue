@@ -13,7 +13,7 @@ export default {
 <template>
   <div class="card">
     <img :src="image" alt="">
-    <h3 class="title">{{ title }}</h3>
+    <h2 class="title">{{ title }}</h2>
     <p class="description">{{ desc }}</p>
     <div class="card-links">
       <a title="GitHub repository" v-if="repo" :href="'https://github.com/xXTgamerXx/' + repo"><i class="fa-brands fa-github"></i></a>
@@ -22,7 +22,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .card {
   width: 20rem;
   padding: 1rem 1rem 2rem 1rem;
@@ -34,13 +34,16 @@ export default {
   border-radius: 1rem;
   position: relative;
 }
-.card img {
+img {
   width: 100%;
   border-radius: 0.5rem;
 }
-.card .title {
+.title {
   font-size: 24px;
   margin-block: 0.5rem;
+}
+p {
+  margin: 0.5rem 0 1rem 0;
 }
 .card-links {
   position: absolute;
@@ -67,7 +70,7 @@ export default {
 @media screen and (max-width: 500px) {
   .card {
     width: 60vw;
-  padding: 0.8rem 0.8rem 2.2rem 0.8rem;
+    padding: 0.8rem 0.8rem 2.2rem 0.8rem;
   }
 }
 </style>

@@ -4,6 +4,7 @@ import NavBar from './components/NavBar.vue';
 import Home from './components/Home.vue';
 import Projects from './components/Projects.vue';
 import Links from './components/Links.vue';
+import About from './components/About.vue';
 </script>
 
 <template>
@@ -12,4 +13,5 @@ import Links from './components/Links.vue';
   <Aurora/>
   <Projects/>
   <Links/>
+  <About/>
 </template>
