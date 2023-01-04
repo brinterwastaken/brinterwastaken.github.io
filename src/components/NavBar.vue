@@ -1,7 +1,7 @@
 <template>
   <div id="navbar-container">
     <div class="bar" id="titlebar" ref="titlebar">
-      <img src="/pfp.png" alt="">
+      <img src="/pfp.webp" alt="">
       <div>Trinethr</div>
     </div>
     <div class="bar" id="navbar" ref="navbar">

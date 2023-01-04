@@ -6,7 +6,7 @@ export default {
   },
   data() {
     return {
-      cardimages: ['imgs/wafer-desktop.png','/imgs/spacedonut.png', '/imgs/doapp.png', '/imgs/everforest-nvim.png', '/imgs/nord-i3.png', '/imgs/fluent-startpage.png'],
+      cardimages: ['imgs/wafer-desktop.webp','/imgs/spacedonut.webp', '/imgs/doapp.webp', '/imgs/everforest-nvim.webp', '/imgs/nord-i3.webp', '/imgs/fluent-startpage.webp'],
       cardtitles: ['Wafer desktop', 'Donut in space', 'Do.app', 'Everforest Neovim', 'Nord i3wm setup', 'Fluent Startpage'],
       carddescs: [
         'Desktop that looks like a popular operating system named after a fruit, made with Vue.',
