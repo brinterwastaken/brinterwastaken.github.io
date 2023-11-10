@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Satoshi';
+  src:
+    url('./Satoshi-Variable.woff2') format('woff2'),
+    url('./Satoshi-Variable.woff') format('woff'),
+    url('./Satoshi-Variable.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Satoshi Italic';
+  src:
+    url('./Satoshi-VariableItalic.woff2') format('woff2'),
+    url('./Satoshi-VariableItalic.woff') format('woff'),
+    url('./Satoshi-VariableItalic.ttf') format('truetype');
+}
