@@ -19,7 +19,7 @@ const props = defineProps({ text: String, fontSize: Number, overlayBg: String })
 <style>
 svg {
   font-weight: 800;
-  font-family: 'Satoshi Variable';
+  font-family: 'Satoshi';
   width: 100%;
 }
 
