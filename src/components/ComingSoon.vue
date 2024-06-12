@@ -3,8 +3,9 @@ import { ref } from 'vue'
 import FancyHeading from './FancyHeading.vue';
 
 const bgtext = ref('')
-const originalText = 'OLD WEBSITE HERE'
-const linktext = ref('OLD WEBSITE HERE')
+const countdown = ref(20)
+const originalText = 'Old Website Here'
+const linktext = ref('Old Website Here')
 
 const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
@@ -36,6 +37,17 @@ const linkEffect = () => {
   }, 25)
 }
 
+const redirectingCountdown = () => {
+  const interval = setInterval(() => {
+    countdown.value--;
+    if (countdown.value == 0) {
+      clearInterval(interval);
+      window.location.href = "https://brin.is-a.dev/old-website-2";
+    };
+  }, 1000)
+}
+
+redirectingCountdown();
 updateBgText();
 linkEffect();
 </script>
@@ -55,6 +67,7 @@ linkEffect();
     <a @mouseover="linkEffect" class="link" href="https://brin.is-a.dev/old-website-2">{{
       linktext
     }}</a>
+    <div class="redirecting">Redirecting in {{ countdown }}</div>
   </div>
 </template>
 
@@ -143,5 +156,10 @@ linkEffect();
 .comingsoon .link:hover {
   text-decoration: underline;
   text-shadow: 0 0.1rem 2rem #75b1d2;
+}
+.redirecting {
+  font-size: 1.25rem;
+  color: #c2eaffaf;
+  font-family: 'Space Mono';
 }
 </style>
