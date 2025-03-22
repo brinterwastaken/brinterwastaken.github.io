@@ -39,7 +39,7 @@ export default {
   padding: 8rem 6rem;
   overflow-x: hidden;
   background-image: url("/imgs/gabriele-garanzelli-unsplash-edit.jpg");
-  height: 100vh;
+  min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
