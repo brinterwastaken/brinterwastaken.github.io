@@ -9,9 +9,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        gh: resolve(__dirname, 'gh/index.html'),
-        yt: resolve(__dirname, 'yt/index.html'),
-        ig: resolve(__dirname, 'ig/index.html'),
       },
     },
   },
