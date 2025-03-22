@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({ text: String, fontSize: Number, overlayBg: String })
+const props = defineProps({ text: String, fontSize: Number })
 </script>
 
 <template>
@@ -14,8 +14,8 @@ const props = defineProps({ text: String, fontSize: Number, overlayBg: String })
       <stop offset="50%" style="stop-color: rgb(11, 36, 36); stop-opacity: 1" />
       <stop offset="85%" style="stop-color: rgb(28, 30, 58); stop-opacity: 1" />
     </linearGradient>
-    <text :font-size="props.fontSize + 'rem'" class="bg" x="50%" y="50%">{{ props.text }}</text>
-    <text :font-size="props.fontSize + 'rem'" class="overlay" x="50%" y="50%" :fill="props.overlayBg">
+    <text :font-size="props.fontSize + 'rem'" class="stroke" x="50%" y="50%">{{ props.text }}</text>
+    <text :font-size="props.fontSize + 'rem'" class="overlay" x="50%" y="50%">
       {{ props.text }}
     </text>
   </svg>
@@ -29,27 +29,30 @@ svg {
 }
 
 text {
+  line-height: 20rem;
   text-anchor: middle;
   dominant-baseline: central;
   cursor: default;
 }
-text.bg {
-  fill: url(#lgrad1);
+
+text.stroke {
+  fill: none;
   stroke: url(#lgrad1);
-  stroke-width: 2px;
+  stroke-width: 4px;
   transition: stroke-width 100ms;
 }
 text.overlay {
   stroke: none;
+  fill: url(#lgrad2);
   transition: filter 100ms;
   pointer-events: none;
   user-select: none;
 }
 
-text.bg:hover ~ text.overlay {
+text.stroke:hover ~ text.overlay {
   filter: brightness(120%);
 }
-text.bg:hover {
-  stroke-width: 4px;
+text.stroke:hover {
+  stroke-width: 6px;
 }
 </style>

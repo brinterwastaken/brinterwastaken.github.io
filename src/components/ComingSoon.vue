@@ -38,6 +38,8 @@ const linkEffect = () => {
 
 updateBgText();
 linkEffect();
+
+document.onmousemove = updateBgText;
 </script>
 
 <template>
@@ -51,7 +53,7 @@ linkEffect();
     {{ bgtext }}
   </div>
   <div class="comingsoon">
-    <FancyHeading text="Coming Soon" :font-size=10 overlay-bg="#081024e5" />
+    <FancyHeading text="Coming Soon" :font-size=10 />
     <a @mouseover="linkEffect" class="link" href="https://brin.is-a.dev/old-website-2">{{
       linktext
     }}</a>
