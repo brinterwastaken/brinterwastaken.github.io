@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import FancyHeading from './FancyHeading.vue';
+
+import comingSoon from '../assets/coming-soon.svg'
 
 const bgtext = ref('')
 const originalText = 'OLD WEBSITE HERE'
@@ -37,7 +38,6 @@ const linkEffect = () => {
 }
 
 updateBgText();
-linkEffect();
 
 document.onmousemove = updateBgText;
 </script>
@@ -53,7 +53,7 @@ document.onmousemove = updateBgText;
     {{ bgtext }}
   </div>
   <div class="comingsoon">
-    <FancyHeading text="Coming Soon" :font-size=10 />
+    <img :src="comingSoon" alt="" />
     <a @mouseover="linkEffect" class="link" href="https://brin.is-a.dev/old-website-2">{{
       linktext
     }}</a>
