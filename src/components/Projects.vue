@@ -76,7 +76,7 @@ export default {
 #card-container {
   margin-top: 2em;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   justify-content: start;
   gap: 2rem;
 }

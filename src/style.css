@@ -28,6 +28,10 @@ body {
   place-items: center;
 }
 
+#app {
+  width: 100%;
+}
+
 #threejs-container {
   position: absolute;
   display: flex;

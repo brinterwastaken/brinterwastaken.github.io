@@ -9,8 +9,8 @@
       <a class="linktext" href="#projects">Projects</a>
       <a class="linktext" href="#links">Links</a>
       <a class="linktext" href="#about">About</a>
-      <a class="linkicon" href="/yt/" aria-label="YouTube Channel"><i class="fa-brands fa-youtube"></i></a>
-      <a class="linkicon" href="/gh/" aria-label="GitHub Account"><i class="fa-brands fa-github"></i></a>
+      <a class="linkicon" href="https://github.com/brinterwastaken" aria-label="GitHub Account"><i class="fa-brands fa-github"></i></a>
+      <a class="linkicon" href="https://www.youtube.com/@_brinter" aria-label="YouTube Channel"><i class="fa-brands fa-youtube"></i></a>
     </div>
     <div class="bar" id="mobile-nav"> 
       <a class="linkicon" href="#home"><i class="fa-solid fa-house"></i></a>
