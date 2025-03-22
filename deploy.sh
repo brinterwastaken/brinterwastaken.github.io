@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-pnpm build
+yarn build
 cd dist
 echo "" > .nojekyll
 echo "brin.is-a.dev" > CNAME
