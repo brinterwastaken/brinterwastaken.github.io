@@ -1,5 +1,2 @@
-# Portfolio website
-
-Redesign in progress.
-
-Access old website at https://brin.is-a.dev/.
+# [My website](https://brin.is-a.dev)
+### (STILL WORK IN PROGRESS)

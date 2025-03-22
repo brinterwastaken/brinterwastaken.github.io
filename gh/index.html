@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting to GitHub...</title>
+</head>
+<body>
+  <div id="redirectfail">If the redirect fails, <a id="link" href="https://github.com/xXTgamerXx/">click here</a></div>
+  <div id="repoerror" style="color:red"></div>
+  <script>
+    const urlParams = new URLSearchParams(location.search);
+    var reponame = (urlParams.get('repo'))
+    if (reponame != null && reponame != "") {
+      document.querySelector("#link").href += reponame
+      location.href = "https://github.com/xXTgamerXx/" + reponame;
+    } else if (reponame == null) {
+      location.href = "https://github.com/xXTgamerXx";
+    } else {
+      document.querySelector("#redirectfail").innerText = ""
+      document.querySelector("#repoerror").innerText = "Error - no repository specified!"
+    }
+  </script>
+</body>
+</html>
