@@ -9,6 +9,11 @@ const props = defineProps({ text: String, fontSize: Number, overlayBg: String })
       <stop offset="50%" style="stop-color: rgb(118, 255, 239); stop-opacity: 1" />
       <stop offset="85%" style="stop-color: rgb(231, 178, 255); stop-opacity: 1" />
     </linearGradient>
+    <linearGradient id="lgrad2" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="15%" style="stop-color: rgb(21, 31, 58); stop-opacity: 1" />
+      <stop offset="50%" style="stop-color: rgb(11, 36, 36); stop-opacity: 1" />
+      <stop offset="85%" style="stop-color: rgb(28, 30, 58); stop-opacity: 1" />
+    </linearGradient>
     <text :font-size="props.fontSize + 'rem'" class="bg" x="50%" y="50%">{{ props.text }}</text>
     <text :font-size="props.fontSize + 'rem'" class="overlay" x="50%" y="50%" :fill="props.overlayBg">
       {{ props.text }}
