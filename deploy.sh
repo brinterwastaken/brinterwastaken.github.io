@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-yarn build
+pnpm build
 cd dist
 echo "" > .nojekyll
 echo "brin.is-a.dev" > CNAME
@@ -10,5 +10,5 @@ git checkout -B main
 git add -A
 git commit -m "deploy"
 
-git push -f https://github.com/xXTgamerXx/xXTgamerXx.github.io.git main:gh-pages
+git push -f https://github.com/brinterwastaken/brinterwastaken.github.io.git main:gh-pages
 cd ..

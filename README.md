@@ -1,2 +1,2 @@
 # [My website](https://brin.is-a.dev)
-### (STILL WORK IN PROGRESS)
+- Portfolio website to display personal projects.
