@@ -26,8 +26,8 @@ export default {
   },
   mounted() {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
+      entries.forEach(async (entry, i) => {
+        if (entry.isIntersecting) await setTimeout(() => entry.target.classList.add("show"), i * 150);
         else entry.target.classList.remove("show");
       })
     })
@@ -41,7 +41,7 @@ export default {
 <template>
   <div id="projects">
     <h1>My Projects</h1>
-    <code class="blinker description">My personal projects over the years.</code>
+    <code class="blinker description">Personal projects I've worked on over the years.</code>
     <div id="card-container" ref="cards">
       <ProjectCard :image="cardimages[0]" :title="cardtitles[0]" :desc="carddescs[0]" :repo="cardrepos[0]" :url="cardurls[0]"></ProjectCard>
       <ProjectCard :image="cardimages[1]" :title="cardtitles[1]" :desc="carddescs[1]" :repo="cardrepos[1]" :url="cardurls[1]"></ProjectCard>
@@ -62,11 +62,6 @@ export default {
   font-family: Satoshi;
   font-size: 3rem;
   font-weight: 800;
-}
-.show {
-  opacity: 1;
-  margin-left: 0;
-  filter: none;
 }
 .description {
   font-size: 1.3rem;

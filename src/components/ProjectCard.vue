@@ -27,12 +27,16 @@ export default {
   width: 20rem;
   padding: 1rem 1rem 2rem 1rem;
   opacity: 0;
-  margin-left: -15vw;
-  filter: blur(10px);
-  transition: opacity 500ms, margin-left 500ms, filter 500ms;
+  transform: scale(50%);
+  transition: opacity 0.5s cubic-bezier(.4,.1,.35,1.35), transform 0.5s cubic-bezier(.4,.1,.35,1.35);
   background: #ffffff0a;
   border-radius: 1rem;
   position: relative;
+}
+
+.show {
+  opacity: 1;
+  transform: none;
 }
 img {
   width: 100%;
