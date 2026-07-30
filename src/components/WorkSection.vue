@@ -24,7 +24,7 @@
 @reference "tailwindcss";
 
 .darkTransition {
-  @apply w-full h-[12vh] font-extralight text-7xl lg:text-8xl bg-stone-950 flex flex-col items-center;
+  @apply w-dvw h-[12vh] font-extralight  bg-stone-950 flex flex-col items-center;
   mask-image: linear-gradient(
     to bottom,
     black calc((var(--progress) * (1 + var(--index) * 0.2)) * 100%),
@@ -33,7 +33,7 @@
   transition: letter-spacing 0.5s ease;
 }
 .darkTransition span {
-  @apply hover:tracking-wider w-fit;
+  @apply hover:tracking-wider w-fit text-[8.5vh] md:text-[10vh] leading-none;
   transition: letter-spacing 0.5s ease;
 }
 </style>

@@ -11,7 +11,7 @@ const pronounce = () => {
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center mt-[10vh] md:mt-32 h-[36vh] md:h-80 shrink-0">
+  <div class="flex flex-col justify-center items-center mt-[10vh] md:mt-[16vh] h-[36vh] nd:h-[48vh] shrink-0">
     <h1
       class="text-2xl md:text-4xl font-medium text-center flex items-center gap-2 overflow-clip max-h-12"
     >

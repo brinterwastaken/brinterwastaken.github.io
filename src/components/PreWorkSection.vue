@@ -4,7 +4,6 @@ import { PhPlus } from "@phosphor-icons/vue";
 
 <template>
   <div
-    id="work"
     class="w-full px-6 sm:px-24 md:px-16 mx-auto max-w-6xl mt-6 mb-44"
   >
     <div
@@ -86,13 +85,16 @@ import { PhPlus } from "@phosphor-icons/vue";
 @utility pencilstroke-sm {
   width: calc((var(--progress) - 0.55) / 0.1 * 18rem);
   background-size: 18rem 120%;
+  max-width: 18rem;
 }
 @utility pencilstroke-md {
   width: calc((var(--progress) - 0.55) / 0.1 * 45rem);
   background-size: 45rem 120%;
+  max-width: 45rem;
 }
 @utility pencilstroke-lg {
   width: calc((var(--progress) - 0.55) / 0.1 * 55rem);
   background-size: 55rem 120%;
+  max-width: 55rem;
 }
 </style>

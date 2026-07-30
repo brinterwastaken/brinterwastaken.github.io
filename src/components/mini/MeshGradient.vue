@@ -1,12 +1,12 @@
 <template>
   <div
-    class="absolute top-0 left-0 w-full h-full -z-1"
+    class="absolute top-0 left-0 w-dvw h-full -z-1 overflow-hidden"
     data-scroll
     data-scroll-speed="-0.7"
     data-scroll-offset="0,-70%"
   >
     <div
-      class="blurBox relative top-0 left-0 h-full w-dvw backdrop-blur-[5rem] md:backdrop-blur-[7.5rem]"
+      class="blurBox relative top-0 left-0 h-full w-full backdrop-blur-[5rem] md:backdrop-blur-[7.5rem]"
     ></div>
     <div
       data-scroll
