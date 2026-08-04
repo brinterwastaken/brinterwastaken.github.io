@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
-import carImg from "../assets/car-website-body.webp";
-import wheelImg from "../assets/car-website-wheel.webp";
+import carImg from "../assets/car/car-website-body.webp";
+import wheelImg from "../assets/car/car-website-wheel.webp";
 
 const props = defineProps<{
   acceleration: number;
