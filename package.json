@@ -11,6 +11,7 @@
   "dependencies": {
     "@phosphor-icons/vue": "^2.2.1",
     "@tailwindcss/vite": "^4.3.3",
+    "bezier-easing": "^3.0.1",
     "locomotive-scroll": "^5.0.1",
     "tailwindcss": "^4.3.3",
     "vue": "^3.5.39"

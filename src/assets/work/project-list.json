@@ -1,0 +1,53 @@
+{
+  "projects": [
+    {
+      "name": "Slim Mouse Concept",
+      "description": "Models of parts of a slim/portable mouse, designed in CAD and rendered in Blender.",
+      "year": "2026",
+      "tags": ["3D CAD", "Design"],
+      "tools": ["OnShape", "Blender"]
+    },
+    {
+      "name": "KCET Analyzer",
+      "description": "A website that displays KCET scores of candidates and their percentile w.r.t. other candidates.",
+      "year": "2026",
+      "tags": ["Front-end", "Web App"],
+      "tools": ["Vue.js", "Nuxt 3"]
+    },
+    {
+      "name": "Database and MySQL Handbook",
+      "description": "A handbook to quickly understand Relational Databases and the basics of SQL with MySQL.",
+      "year": "2026",
+      "tags": ["Handbook", "Learning"],
+      "tools": ["Quarto", "LaTeX"]
+    },
+    {
+      "name": "ARMOUR Project",
+      "description": "Personal safety platform concept using a smart wearable connected to a mobile app.",
+      "year": "2025",
+      "tags": ["Design", "Mobile App", "Electronics"],
+      "tools": ["Flutter", "Bluetooth", "ESP32"]
+    },
+    {
+      "name": "UrbanConnect Concept",
+      "description": "A concept of an app to simplify last mile connectivity for traveling via public transport.",
+      "year": "2025",
+      "tags": ["Design", "UI/UX"],
+      "tools": ["Figma", "Canva"]
+    },
+    {
+      "name": "Gnanamanthanam 2024",
+      "description": "The annual School Magazine of Sri Kumaran Public School, created to highlight events of the academic year.",
+      "year": "2024",
+      "tags": ["Design", "Media"],
+      "tools": ["Figma", "GIMP"]
+    },
+    {
+      "name": "Exhibition Events Display",
+      "description": "A web app displaying live event statuses during the 2023 Exhibition at Sri Kumaran Public School.",
+      "year": "2023",
+      "tags": ["Web App"],
+      "tools": ["Vue.js", "Nuxt 3"]
+    }
+  ]
+}

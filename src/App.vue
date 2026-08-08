@@ -48,11 +48,12 @@ onMounted(() => {
     top: 0,
     behavior: "smooth",
   });
+  
   setTimeout(() => {
     scroll = new LocomotiveScroll({
       scrollCallback: onScroll,
     });
-  }, 1525);
+  }, 1775);
 });
 
 onBeforeUnmount(() => {
@@ -82,6 +83,7 @@ onBeforeUnmount(() => {
     </div>
     <PreWorkSection />
     <WorkSection />
+    <div class="my-400"></div>
     <div class="noiseOverlay"></div>
     <Cursor />
   </div>
