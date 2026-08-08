@@ -1,53 +1,60 @@
 {
   "projects": [
     {
-      "name": "Slim Mouse Concept",
-      "description": "Models of parts of a slim/portable mouse, designed in CAD and rendered in Blender.",
+      "name": "Compact Mouse Concept",
+      "description": "Models of parts of a compact/portable mouse, designed in CAD and rendered in Blender.",
       "year": "2026",
       "tags": ["3D CAD", "Design"],
-      "tools": ["OnShape", "Blender"]
+      "tools": ["OnShape", "Blender"],
+      "cover": "mouse-concept.webp"
     },
     {
       "name": "KCET Analyzer",
-      "description": "A website that displays KCET scores of candidates and their percentile w.r.t. other candidates.",
+      "description": "A website that displays KCET examination scores of candidates and an analysis with score distribution graphs.",
       "year": "2026",
       "tags": ["Front-end", "Web App"],
-      "tools": ["Vue.js", "Nuxt 3"]
+      "tools": ["Vue.js", "Nuxt 3"],
+      "cover": "kcet-analyzer.webp"
     },
     {
-      "name": "Database and MySQL Handbook",
-      "description": "A handbook to quickly understand Relational Databases and the basics of SQL with MySQL.",
+      "name": "Database & MySQL Handbook",
+      "description": "A handbook for students to quickly understand Relational Databases and the basics of SQL with MySQL.",
       "year": "2026",
-      "tags": ["Handbook", "Learning"],
-      "tools": ["Quarto", "LaTeX"]
+      "tags": ["Educational", "E-Book"],
+      "tools": ["Quarto", "LaTeX"],
+      "cover": "db-mysql-handbook.webp"
     },
     {
-      "name": "ARMOUR Project",
-      "description": "Personal safety platform concept using a smart wearable connected to a mobile app.",
+      "name": "Project ARMOUR",
+      "description": "Personal safety platform proof-of-concept using a smart wearable connected to a mobile app.",
       "year": "2025",
-      "tags": ["Design", "Mobile App", "Electronics"],
-      "tools": ["Flutter", "Bluetooth", "ESP32"]
+      "tags": ["Mobile App", "Electronics"],
+      "tools": ["Flutter", "Bluetooth", "ESP32"],
+      "cover": "armour-project.webp"
     },
     {
       "name": "UrbanConnect Concept",
       "description": "A concept of an app to simplify last mile connectivity for traveling via public transport.",
       "year": "2025",
       "tags": ["Design", "UI/UX"],
-      "tools": ["Figma", "Canva"]
+      "tools": ["Figma", "Canva"],
+      "cover":""
     },
     {
       "name": "Gnanamanthanam 2024",
       "description": "The annual School Magazine of Sri Kumaran Public School, created to highlight events of the academic year.",
       "year": "2024",
       "tags": ["Design", "Media"],
-      "tools": ["Figma", "GIMP"]
+      "tools": ["Figma", "GIMP"],
+      "cover":""
     },
     {
       "name": "Exhibition Events Display",
       "description": "A web app displaying live event statuses during the 2023 Exhibition at Sri Kumaran Public School.",
       "year": "2023",
       "tags": ["Web App"],
-      "tools": ["Vue.js", "Nuxt 3"]
+      "tools": ["Vue.js", "Nuxt 3"],
+      "cover":""
     }
   ]
 }

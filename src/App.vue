@@ -93,7 +93,7 @@ onBeforeUnmount(() => {
 @reference "tailwindcss";
 
 .noiseOverlay {
-  @apply fixed top-0 left-0 w-dvw h-dvh z-100 pointer-events-none opacity-75;
+  @apply fixed top-0 left-0 w-dvw h-dvh z-100 pointer-events-none opacity-50;
   background-image: url("./assets/noise.png");
   background-size: 100px 100px;
 }
