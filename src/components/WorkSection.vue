@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PhCircleNotch } from "@phosphor-icons/vue";
-import { computed, h, onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import BezierEasing from "bezier-easing";
 import ProjectBox from "./ProjectBox.vue";
 
