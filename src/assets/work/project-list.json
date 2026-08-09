@@ -3,58 +3,65 @@
     {
       "name": "Compact Mouse Concept",
       "description": "Models of parts of a compact/portable mouse, designed in CAD and rendered in Blender.",
-      "year": "2026",
+      "year": 2026,
       "tags": ["3D CAD", "Design"],
       "tools": ["OnShape", "Blender"],
-      "cover": "mouse-concept.webp"
+      "cover": "mouse-concept.webp",
+      "team": false
     },
     {
       "name": "KCET Analyzer",
       "description": "A website that displays KCET examination scores of candidates and an analysis with score distribution graphs.",
-      "year": "2026",
+      "year": 2026,
       "tags": ["Front-end", "Web App"],
       "tools": ["Vue.js", "Nuxt 3"],
-      "cover": "kcet-analyzer.webp"
+      "cover": "kcet-analyzer.webp",
+      "team": true
     },
     {
       "name": "Database & MySQL Handbook",
       "description": "A handbook for students to quickly understand Relational Databases and the basics of SQL with MySQL.",
-      "year": "2026",
+      "year": 2026,
       "tags": ["Educational", "E-Book"],
       "tools": ["Quarto", "LaTeX"],
-      "cover": "db-mysql-handbook.webp"
+      "cover": "db-mysql-handbook.webp",
+      "team": false
     },
     {
       "name": "Project ARMOUR",
       "description": "Personal safety platform proof-of-concept using a smart wearable connected to a mobile app.",
-      "year": "2025",
+      "year": 2025,
       "tags": ["Mobile App", "Electronics"],
       "tools": ["Flutter", "Bluetooth", "ESP32"],
-      "cover": "armour-project.webp"
+      "cover": "armour-project.webp",
+      "team": true
     },
     {
       "name": "UrbanConnect Concept",
-      "description": "A concept of an app to simplify last mile connectivity for traveling via public transport.",
-      "year": "2025",
+      "description": "A concept of an app designed to simplify last mile connectivity for traveling via public transport.",
+      "year": 2025,
       "tags": ["Design", "UI/UX"],
       "tools": ["Figma", "Canva"],
-      "cover":""
+      "cover": "urbanconnect-concept.webp",
+      "team": true
     },
     {
-      "name": "Gnanamanthanam 2024",
-      "description": "The annual School Magazine of Sri Kumaran Public School, created to highlight events of the academic year.",
-      "year": "2024",
+      "name": "Gnanamanthanam 2023-24",
+      "description": "The annual School Magazine of Sri Kumaran Public School, created to highlight events of the academic year and display students' works.",
+      "year": 2024,
       "tags": ["Design", "Media"],
-      "tools": ["Figma", "GIMP"],
-      "cover":""
+      "tools": ["Figma", "GIMP", "Blender"],
+      "cover": "school-magazine.webp",
+      "team": true
     },
     {
       "name": "Exhibition Events Display",
       "description": "A web app displaying live event statuses during the 2023 Exhibition at Sri Kumaran Public School.",
-      "year": "2023",
+      "year": 2023,
       "tags": ["Web App"],
       "tools": ["Vue.js", "Nuxt 3"],
-      "cover":""
+      "cover": "",
+      "team": true
     }
   ]
 }

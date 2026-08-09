@@ -50,7 +50,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="hidden md:block">
+  <div class="hidden lg:block">
     <div id="cursor" ref="cursor"></div>
     <div id="cursorBuddy" ref="cursorBuddy">
       {{ buddyText }}

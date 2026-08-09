@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PhTag, PhWrench } from "@phosphor-icons/vue";
+import { PhTag, PhUsers, PhWrench } from "@phosphor-icons/vue";
 
 const props = defineProps<{
   index: number;
@@ -54,8 +54,14 @@ const onExit = (e: MouseEvent) => {
         {{ totalCount }}
       </text>
     </svg>
+    <span
+      v-if="project.team"
+      class="absolute top-2 right-2 p-1 bg-stone-400/20 rounded-xl border border-stone-400/50"
+    >
+      <PhUsers />
+    </span>
     <div
-      class="absolute bg-linear-to-b from-transparent to-stone-950 md:to-stone-950/75 bottom-[12vh] md:bottom-0 left-0 w-full h-50 -z-1"
+      class="absolute bg-linear-to-b from-transparent to-stone-950 md:via-stone-950/65 md:to-stone-950/85 bottom-[12vh] md:bottom-0 left-0 w-full h-50 -z-1"
     ></div>
     <h2 class="text-2xl md:text-3xl font-alt">{{ project.name }}</h2>
     <p class="text-xs md:text-sm">{{ project.description }}</p>
@@ -114,7 +120,7 @@ const onExit = (e: MouseEvent) => {
 }
 
 .lightReflection {
-  @apply absolute hidden md:block -right-12 -bottom-12 w-48 h-48 blur-2xl bg-white/5 rounded-full ;
+  @apply absolute hidden md:block -right-12 -bottom-12 w-48 h-48 blur-2xl bg-white/5 rounded-full;
   transition: translate 0.25s cubic-bezier(0.4, 1.1, 0.9, 1);
 }
 </style>
