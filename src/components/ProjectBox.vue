@@ -10,7 +10,7 @@ const props = defineProps<{
 const onHover = (e: MouseEvent) => {
   const target = e.target as HTMLElement;
   const highlight = target.children.item(0) as HTMLElement;
-  console.log(highlight);
+
   const [x, y] = [e.offsetX, e.offsetY];
   const { width, height } = target.getBoundingClientRect();
 
@@ -34,7 +34,7 @@ const onExit = (e: MouseEvent) => {
   <div
     class="projectBox"
     :style="`--index: ${index}; background-image: url(/project-covers/${project.cover})`"
-    buddy="expand"
+    buddy="👀"
     @mousemove="onHover"
     @mouseleave="onExit"
     data-scroll

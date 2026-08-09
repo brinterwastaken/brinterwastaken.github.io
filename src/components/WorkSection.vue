@@ -7,8 +7,10 @@ import ProjectBox from "./ProjectBox.vue";
 const projects = ref<any[]>([]);
 const isLoading = ref(true);
 const workProgress = ref(0);
+const lightSwitchProgress = ref(0);
 
-const easing = BezierEasing(0.35, 0, 0.65, 1);
+const easing1 = BezierEasing(0.35, 0, 0.65, 1);
+const easing2 = BezierEasing(0.55, 0, 0.45, 1);
 
 onMounted(async () => {
   try {
@@ -22,7 +24,8 @@ onMounted(async () => {
 
   window.addEventListener("workProgress", (e: any) => {
     const { progress } = e.detail;
-    workProgress.value = easing(progress);
+    workProgress.value = easing1(Math.min(progress / 0.65, 1));
+    lightSwitchProgress.value = Math.max((progress - 0.65) / 0.35, 0);
   });
 });
 const projectCount = computed(() => projects.value.length);
@@ -30,7 +33,7 @@ const projectCount = computed(() => projects.value.length);
 
 <template>
   <div
-    class="h-[320vh]"
+    class="h-[500vh]"
     data-scroll
     data-scroll-event-progress="workProgress"
     data-scroll-offset="105%,105%"
@@ -82,6 +85,22 @@ const projectCount = computed(() => projects.value.length);
           />
         </div>
       </div>
+      <div
+        class="absolute bottom-0 left-0 flex items-end w-full h-full pointer-events-none"
+      >
+        <div
+          v-for="i in 5"
+          class="lightTransition"
+          :style="`--progressPercent: calc(${easing2(Math.max(Math.min((lightSwitchProgress - 0.1 * (i - 1)) / 0.6, 1), 0))} * 100%)`"
+        ></div>
+        <div
+          class="absolute left-1/2 top-1/2 -translate-1/2 font-alt font-extralight text-6xl md:text-8xl lg:text-10xl text-black flex flex-col items-center text-center"
+          :style="`opacity: calc(${easing2(Math.max(Math.min((lightSwitchProgress - 0.7) / 0.3, 1), 0))} * 100%)`"
+        >
+          <span>Creative</span>
+          Corner
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -98,8 +117,14 @@ const projectCount = computed(() => projects.value.length);
   );
   transition: letter-spacing 0.5s ease;
 }
+
 .darkTransition span {
   @apply hover:tracking-wider w-fit text-[8.5vh] md:text-[10vh] leading-none;
   transition: letter-spacing 0.5s ease;
+}
+
+.lightTransition {
+  @apply w-[20vw] bg-stone-100/(--progressPercent) pointer-events-auto backdrop-blur-xs md:backdrop-blur-md;
+  height: var(--progressPercent);
 }
 </style>
