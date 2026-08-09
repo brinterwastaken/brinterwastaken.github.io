@@ -98,7 +98,7 @@ const onExit = (e: MouseEvent) => {
   bg-contain bg-top bg-no-repeat border border-stone-500/20
   rounded-3xl flex flex-col gap-1.5 md:gap-2 justify-end p-6 overflow-clip;
   transition:
-    transform 0.25s cubic-bezier(0.4, 1.1, 0.9, 1),
+    transform 0.2s cubic-bezier(0.4, 1.1, 0.9, 1),
     scale 0.35s ease-out,
     opacity 0.35s ease-out,
     translate 0.35s ease-out,
@@ -117,6 +117,10 @@ const onExit = (e: MouseEvent) => {
 
 .projectBox * {
   pointer-events: none;
+}
+
+.projectBox:active {
+  @apply scale-95;
 }
 
 .lightReflection {

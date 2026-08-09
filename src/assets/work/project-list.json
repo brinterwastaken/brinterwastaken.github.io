@@ -47,7 +47,7 @@
     },
     {
       "name": "Gnanamanthanam 2023-24",
-      "description": "The annual School Magazine of Sri Kumaran Public School, created to highlight events of the academic year and display students' works.",
+      "description": "The annual School Magazine of Sri Kumaran Public School, which showcases events of the academic year and students' works.",
       "year": 2024,
       "tags": ["Design", "Media"],
       "tools": ["Figma", "GIMP", "Blender"],
@@ -56,11 +56,11 @@
     },
     {
       "name": "Exhibition Events Display",
-      "description": "A web app displaying live event statuses during the 2023 Exhibition at Sri Kumaran Public School.",
+      "description": "The event information web app, accessed via QR codes across the campus, for the 2023 Exhibition at Sri Kumaran Public School.",
       "year": 2023,
       "tags": ["Web App"],
-      "tools": ["Vue.js", "Nuxt 3"],
-      "cover": "",
+      "tools": ["Vue.js", "Typescript"],
+      "cover": "exhibition-events.webp",
       "team": true
     }
   ]

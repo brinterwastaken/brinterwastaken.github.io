@@ -56,6 +56,7 @@ const pronounce = () => {
 @reference "tailwindcss";
 
 .waveEmoji {
+  transform-origin: 65% 65%;
   animation: waveEmoji 5s ease-out infinite;
 }
 
