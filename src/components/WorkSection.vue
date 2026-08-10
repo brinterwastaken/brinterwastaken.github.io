@@ -2,7 +2,8 @@
 import { PhCircleNotch } from "@phosphor-icons/vue";
 import { computed, onMounted, ref } from "vue";
 import BezierEasing from "bezier-easing";
-import ProjectBox from "./ProjectBox.vue";
+import ProjectCard from "./ProjectCard.vue";
+import ScrollReminder from "./mini/ScrollReminder.vue";
 
 const projects = ref<any[]>([]);
 const isLoading = ref(true);
@@ -63,6 +64,9 @@ const projectCount = computed(() => projects.value.length);
             </div>
             <div class="italic text-center px-2" v-else>
               A collection of student projects and experiments.
+              <Transition name="zoomReveal">
+                <ScrollReminder v-if="workProgress < 0.15" />
+              </Transition>
             </div>
           </Transition>
         </div>
@@ -76,7 +80,7 @@ const projectCount = computed(() => projects.value.length);
           class="flex w-max items-start py-4 px-6 md:px-16 gap-4 md:gap-8 h-full"
           :style="`translate: calc(-${workProgress} * (100% - 100vw)) 0;`"
         >
-          <ProjectBox
+          <ProjectCard
             v-for="[index, project] of projects.entries()"
             :key="index"
             :index="index"
@@ -112,7 +116,7 @@ const projectCount = computed(() => projects.value.length);
   @apply w-dvw h-[10vh] md:h-[11vh] font-extralight bg-stone-950 flex flex-col items-center;
   mask-image: linear-gradient(
     to bottom,
-    black calc((var(--progress) * (1 + var(--index) * 0.2)) * 100%),
+    black calc(min((var(--progress) * (1 + var(--index) * 0.2)) * 100%)),
     transparent calc((var(--progress) * (1 + var(--index) * 0.2)) * 100%)
   );
   transition: letter-spacing 0.5s ease;

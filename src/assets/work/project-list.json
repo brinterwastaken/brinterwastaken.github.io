@@ -32,7 +32,7 @@
       "description": "Personal safety platform proof-of-concept using a smart wearable connected to a mobile app.",
       "year": 2025,
       "tags": ["Mobile App", "Electronics"],
-      "tools": ["Flutter", "Bluetooth", "ESP32"],
+      "tools": ["Flutter", "ESP32"],
       "cover": "armour-project.webp",
       "team": true
     },
