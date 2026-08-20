@@ -33,8 +33,8 @@ const onExit = (e: MouseEvent) => {
 };
 
 onMounted(() => {
-  window.addEventListener(`projCard-${props.index}`, (e:any) => {
-    if (e.detail.way == 'leave') {
+  window.addEventListener(`projCard-${props.index}`, (e: any) => {
+    if (e.detail.way == "leave") {
       projectInfo.value = false;
     }
   });
@@ -47,15 +47,17 @@ onMounted(() => {
       class="projectCard"
       :data-index="index"
       :style="`--index: ${index}; background-image: url(/project-covers/${project.cover})`"
-      buddy="👀"
       @mousemove="onHover"
       @mouseleave="onExit"
       data-scroll
       data-scroll-repeat
       :data-scroll-call="`projCard-${index}`"
       :data-show-info="projectInfo"
-      @click="projectInfo = true"
     >
+      <!-- 
+      buddy="👀"
+      @click="projectInfo = true"
+      -->
       <div class="lightReflection"></div>
       <svg
         viewBox="-5 -5 200 60"
@@ -86,26 +88,16 @@ onMounted(() => {
       >
         <div class="flex gap-2 items-center">
           <PhTag size="18" weight="duotone" />
-          <span
-            v-for="tag in project.tags"
-            class="chip"
-            >{{ tag }}</span
-          >
+          <span v-for="tag in project.tags" class="chip">{{ tag }}</span>
         </div>
         <div class="flex gap-2 items-center">
           <PhWrench size="18" weight="duotone" />
-          <span
-            v-for="tool in project.tools"
-            class="chip"
-            >{{ tool }}</span
-          >
+          <span v-for="tool in project.tools" class="chip">{{ tool }}</span>
         </div>
       </div>
     </div>
     <div class="projectInfo" :data-show-info="projectInfo">
-      <div
-        class="flex items-center gap-2 pb-2 border-b border-b-stone-700"
-      >
+      <div class="flex items-center gap-2 pb-2 border-b border-b-stone-700">
         <button
           @click="projectInfo = false"
           class="p-2 hover:bg-stone-700 rounded-2xl transition-colors"
@@ -114,7 +106,9 @@ onMounted(() => {
           <PhCaretLeft size="24" class="pointer-events-none" />
         </button>
         <span class="text-lg font-medium">{{ project.name }}</span>
-        <span class="font-mono text-sm ml-auto mr-2 chip">{{ project.year }}</span>
+        <span class="font-mono text-sm ml-auto mr-2 chip">{{
+          project.year
+        }}</span>
       </div>
     </div>
   </div>

@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import { onBeforeUnmount, onMounted, provide, ref } from "vue";
 import Car from "./components/Car.vue";
 import TitleSection from "./components/TitleSection.vue";
 
 import LocomotiveScroll from "locomotive-scroll";
-import ScrollReminder from "./components/mini/ScrollReminder.vue";
-import MeshGradient from "./components/mini/MeshGradient.vue";
+import ScrollReminder from "./components/tiny/ScrollReminder.vue";
+import MeshGradient from "./components/tiny/MeshGradient.vue";
 import PreWorkSection from "./components/PreWorkSection.vue";
-import Cursor from "./components/mini/Cursor.vue";
+import Cursor from "./components/tiny/Cursor.vue";
 import WorkSection from "./components/WorkSection.vue";
+import CreativeSection from "./components/CreativeSection.vue";
 
 interface ScrollData {
   scroll: number;
@@ -18,7 +19,7 @@ interface ScrollData {
   progress: number;
 }
 
-let scroll: null | LocomotiveScroll = null;
+let scroll = ref<null | LocomotiveScroll>(null);
 
 const acceleration = ref(0);
 const position = ref(0);
@@ -48,25 +49,30 @@ onMounted(() => {
     top: 0,
     behavior: "smooth",
   });
-  
+
   setTimeout(() => {
-    scroll = new LocomotiveScroll({
+    scroll.value = new LocomotiveScroll({
       scrollCallback: onScroll,
     });
   }, 1775);
 });
 
 onBeforeUnmount(() => {
-  if (scroll) {
-    scroll.destroy();
+  if (scroll.value) {
+    scroll.value.destroy();
   }
 });
+
+provide("locoScroll", scroll);
 </script>
 
 <template>
   <div class="flex flex-col">
-    <div id="hero" class="relative flex flex-col justify-between h-[80vh] md:h-[90vh]">
-      <MeshGradient/>
+    <div
+      id="hero"
+      class="relative flex flex-col justify-between h-[80vh] md:h-[90vh]"
+    >
+      <MeshGradient />
       <TitleSection />
       <Car
         data-scroll
@@ -76,13 +82,18 @@ onBeforeUnmount(() => {
         :position="position"
       />
     </div>
-    <div class="h-20 mb-[12vh] md:mb-[72vh]" data-scroll data-scroll-speed="-0.5">
+    <div
+      class="h-20 mb-[12vh] md:mb-[72vh]"
+      data-scroll
+      data-scroll-speed="-0.5"
+    >
       <Transition name="zoomReveal">
         <ScrollReminder v-if="position < 50" />
       </Transition>
     </div>
     <PreWorkSection />
     <WorkSection />
+    <CreativeSection />
     <div class="my-400"></div>
     <div class="noiseOverlay"></div>
     <Cursor />

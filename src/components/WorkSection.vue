@@ -1,19 +1,40 @@
 <script setup lang="ts">
 import { PhCircleNotch } from "@phosphor-icons/vue";
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted, ref, useTemplateRef, type Ref } from "vue";
 import BezierEasing from "bezier-easing";
-import ProjectCard from "./ProjectCard.vue";
-import ScrollReminder from "./mini/ScrollReminder.vue";
+import ProjectCard from "./small/ProjectCard.vue";
+import ScrollReminder from "./tiny/ScrollReminder.vue";
+
+import { inject } from "vue";
+import type LocomotiveScroll from "locomotive-scroll";
+
+const locoScroll = inject("locoScroll") as Ref<LocomotiveScroll>;
+
+// Relative position where the transition to the next section starts
+const transitionPosition = 0.6;
 
 const projects = ref<any[]>([]);
 const isLoading = ref(true);
 const workProgress = ref(0);
 const lightSwitchProgress = ref(0);
 
+const workSection = useTemplateRef("workSection");
+const workSectionPosition = ref<number[]>([0, 0]);
+
 const easing1 = BezierEasing(0.35, 0, 0.65, 1);
 const easing2 = BezierEasing(0.55, 0, 0.45, 1);
 
 onMounted(async () => {
+  const workSectionRect = workSection.value?.getBoundingClientRect()!;
+  workSectionPosition.value = [
+    Math.ceil(workSectionRect.top + window.scrollY),
+    Math.floor(
+      window.scrollY +
+        workSectionRect.top +
+        (workSectionRect.height - window.innerHeight) * transitionPosition,
+    ),
+  ];
+
   try {
     const module = await import("../assets/work/project-list.json");
     projects.value = module.projects;
@@ -25,11 +46,32 @@ onMounted(async () => {
 
   window.addEventListener("workProgress", (e: any) => {
     const { progress } = e.detail;
-    workProgress.value = easing1(Math.min(progress / 0.65, 1));
-    lightSwitchProgress.value = Math.max((progress - 0.65) / 0.35, 0);
+    workProgress.value = easing1(Math.min(progress / transitionPosition, 1));
+    lightSwitchProgress.value = Math.max(
+      (progress - transitionPosition) / (1 - transitionPosition),
+      0,
+    );
   });
 });
+
 const projectCount = computed(() => projects.value.length);
+
+const horizMouseScroll = (e: Event) => {
+  const scrollToValue = Math.min(
+    Math.max(
+      (locoScroll.value.lenisInstance?.scroll ?? 0) +
+        (e as WheelEvent).deltaX * 0.5,
+      workSectionPosition.value[0],
+    ),
+    workSectionPosition.value[1],
+  );
+  if (Math.abs((e as WheelEvent).deltaY) < Math.abs((e as WheelEvent).deltaX)) {
+    locoScroll.value.scrollTo(scrollToValue, {
+      lock: true,
+      immediate: true,
+    });
+  }
+};
 </script>
 
 <template>
@@ -38,6 +80,7 @@ const projectCount = computed(() => projects.value.length);
     data-scroll
     data-scroll-event-progress="workProgress"
     data-scroll-offset="105%,105%"
+    ref="workSection"
   >
     <div class="text-white sticky top-0">
       <div
@@ -65,7 +108,9 @@ const projectCount = computed(() => projects.value.length);
             <div class="italic text-center px-2" v-else>
               A collection of student projects and experiments.
               <Transition name="zoomReveal">
-                <ScrollReminder v-if="workProgress < 0.15" />
+                <ScrollReminder
+                  v-if="workProgress < 0.1 || workProgress > 0.9"
+                />
               </Transition>
             </div>
           </Transition>
@@ -75,6 +120,7 @@ const projectCount = computed(() => projects.value.length);
         data-scroll
         data-scroll-offset="25%,-100%"
         class="h-[50vh] md:h-[45vh] w-full bg-stone-950 overflow-x-clip"
+        @wheel="horizMouseScroll"
       >
         <div
           class="flex w-max items-start py-4 px-6 md:px-16 gap-4 md:gap-8 h-full"
