@@ -88,7 +88,7 @@ provide("locoScroll", scroll);
       data-scroll-speed="-0.5"
     >
       <Transition name="zoomReveal">
-        <ScrollReminder v-if="position < 50" />
+        <ScrollReminder :recommendation="true" v-if="position < 50" />
       </Transition>
     </div>
     <PreWorkSection />
@@ -104,7 +104,7 @@ provide("locoScroll", scroll);
 @reference "tailwindcss";
 
 .noiseOverlay {
-  @apply fixed top-0 left-0 w-dvw h-dvh z-100 pointer-events-none opacity-50;
+  @apply fixed top-0 left-0 w-dvw h-lvh z-100 pointer-events-none opacity-50;
   background-image: url("./assets/noise.png");
   background-size: 100px 100px;
 }

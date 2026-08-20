@@ -1,5 +1,9 @@
 <script setup lang="ts"> 
 import { PhMouseSimple } from "@phosphor-icons/vue";
+
+const props = defineProps<{
+  recommendation : boolean;
+}>();
 </script>
 
 <template>
@@ -7,7 +11,7 @@ import { PhMouseSimple } from "@phosphor-icons/vue";
     class="flex flex-col items-center p-4 text-stone-500"
   >
     <div class="scrollDown">Scroll Down<PhMouseSimple :size="20" /></div>
-    <div class="md:hidden text-sm">Best Viewed on a Laptop/PC</div>
+    <div v-if="recommendation" class="md:hidden text-sm">Best Viewed on a Laptop/PC</div>
   </div>
 </template>
 

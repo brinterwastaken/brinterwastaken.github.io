@@ -56,15 +56,18 @@ onMounted(async () => {
 
 const projectCount = computed(() => projects.value.length);
 
-const horizMouseScroll = (e: Event) => {
-  const scrollToValue = Math.min(
+const getScrollToValue = (deltaX: number) => {
+  return Math.min(
     Math.max(
-      (locoScroll.value.lenisInstance?.scroll ?? 0) +
-        (e as WheelEvent).deltaX * 0.5,
+      (locoScroll.value.lenisInstance?.scroll ?? 0) + deltaX * 0.5,
       workSectionPosition.value[0],
     ),
     workSectionPosition.value[1],
   );
+};
+
+const horizMouseScroll = (e: Event) => {
+  const scrollToValue = getScrollToValue((e as WheelEvent).deltaX);
   if (Math.abs((e as WheelEvent).deltaY) < Math.abs((e as WheelEvent).deltaX)) {
     locoScroll.value.scrollTo(scrollToValue, {
       lock: true,
@@ -72,11 +75,12 @@ const horizMouseScroll = (e: Event) => {
     });
   }
 };
+
 </script>
 
 <template>
   <div
-    class="h-[500vh]"
+    class="h-[500lvh]"
     data-scroll
     data-scroll-event-progress="workProgress"
     data-scroll-offset="105%,105%"
@@ -105,10 +109,11 @@ const horizMouseScroll = (e: Event) => {
             <div v-if="isLoading" class="flex gap-1 items-center">
               Loading <PhCircleNotch class="animate-spin" />
             </div>
-            <div class="italic text-center px-2" v-else>
+            <div class="text-sm md:text-base italic text-center px-2" v-else>
               A collection of student projects and experiments.
               <Transition name="zoomReveal">
                 <ScrollReminder
+                  :recommendation="false"
                   v-if="workProgress < 0.1 || workProgress > 0.9"
                 />
               </Transition>
@@ -119,7 +124,7 @@ const horizMouseScroll = (e: Event) => {
       <div
         data-scroll
         data-scroll-offset="25%,-100%"
-        class="h-[50vh] md:h-[45vh] w-full bg-stone-950 overflow-x-clip"
+        class="h-[50lvh] md:h-[45vh] w-full bg-stone-950 overflow-x-clip"
         @wheel="horizMouseScroll"
       >
         <div
@@ -159,7 +164,7 @@ const horizMouseScroll = (e: Event) => {
 @reference "tailwindcss";
 
 .darkTransition {
-  @apply w-dvw h-[10vh] md:h-[11vh] font-extralight bg-stone-950 flex flex-col items-center;
+  @apply w-dvw h-[10lvh] md:h-[11vh] font-extralight bg-stone-950 flex flex-col items-center;
   mask-image: linear-gradient(
     to bottom,
     black calc(min((var(--progress) * (1 + var(--index) * 0.2)) * 100%)),
@@ -169,7 +174,7 @@ const horizMouseScroll = (e: Event) => {
 }
 
 .darkTransition span {
-  @apply hover:tracking-wider w-fit text-[8.5vh] md:text-[10vh] leading-none;
+  @apply hover:tracking-wider w-fit text-[8.5lvh] md:text-[10vh] leading-none;
   transition: letter-spacing 0.5s ease;
 }
 

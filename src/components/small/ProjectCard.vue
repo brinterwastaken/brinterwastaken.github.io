@@ -79,7 +79,7 @@ onMounted(() => {
         <PhUsers />
       </span>
       <div
-        class="absolute bg-linear-to-b from-transparent to-stone-950 md:via-stone-950/65 md:to-stone-950/85 bottom-[12vh] md:bottom-0 left-0 w-full h-50 -z-1"
+        class="absolute bg-linear-to-b from-transparent to-stone-950 md:via-stone-950/65 md:to-stone-950/85 bottom-[12svh] md:bottom-0 left-0 w-full h-50 -z-1"
       ></div>
       <h2 class="text-2xl md:text-3xl font-alt">{{ project.name }}</h2>
       <p class="text-xs md:text-sm">{{ project.description }}</p>
@@ -118,7 +118,7 @@ onMounted(() => {
 @reference "tailwindcss";
 
 .projectCard {
-  @apply relative h-[44vh] w-[40vh] md:h-[40vh] md:w-[50vh]
+  @apply relative h-[44svh] w-[40svh] md:h-[40vh] md:w-[50vh]
   shrink-0 bg-stone-950 scale-85 opacity-0 md:blur-md translate-y-24 
   bg-contain bg-top bg-no-repeat border border-stone-500/20 backface-hidden
   rounded-3xl flex flex-col gap-1.5 md:gap-2 justify-end p-6 overflow-clip;
