@@ -74,7 +74,7 @@ onMounted(() => {
       </svg>
       <span
         v-if="project.team"
-        class="absolute top-2 right-2 p-1 bg-stone-400/20 rounded-xl border border-stone-400/50"
+        class="absolute top-2 right-2 p-1 bg-stone-400/20 rounded-full border border-stone-400/50"
       >
         <PhUsers />
       </span>
@@ -121,7 +121,7 @@ onMounted(() => {
   @apply relative h-[44svh] w-[40svh] md:h-[40vh] md:w-[50vh]
   shrink-0 bg-stone-950 scale-85 opacity-0 md:blur-md translate-y-24 
   bg-contain bg-top bg-no-repeat border border-stone-500/20 backface-hidden
-  rounded-3xl flex flex-col gap-1.5 md:gap-2 justify-end p-6 overflow-clip;
+  rounded-2xl flex flex-col gap-1.5 md:gap-2 justify-end p-6 overflow-clip;
   transition:
     transform 0.3s cubic-bezier(0.4, 1.1, 0.9, 1),
     scale 0.35s ease-out,

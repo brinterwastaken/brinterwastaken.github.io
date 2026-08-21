@@ -10,6 +10,7 @@ import PreWorkSection from "./components/PreWorkSection.vue";
 import Cursor from "./components/tiny/Cursor.vue";
 import WorkSection from "./components/WorkSection.vue";
 import CreativeSection from "./components/CreativeSection.vue";
+import ScrollBar from "./components/small/ScrollBar.vue";
 
 interface ScrollData {
   scroll: number;
@@ -23,12 +24,15 @@ let scroll = ref<null | LocomotiveScroll>(null);
 
 const acceleration = ref(0);
 const position = ref(0);
+const progress = ref(0);
+const scrollLimit = ref(0);
 
 let oldVelocity = 0;
 let oldTime = performance.now();
 
 const onScroll = (data: ScrollData) => {
   position.value = data.scroll;
+  progress.value = data.progress;
 
   const currentTime = performance.now();
   const deltaTime = (currentTime - oldTime) / 100;
@@ -54,6 +58,7 @@ onMounted(() => {
     scroll.value = new LocomotiveScroll({
       scrollCallback: onScroll,
     });
+    scrollLimit.value = scroll.value.lenisInstance?.limit ?? 0;
   }, 1775);
 });
 
@@ -96,6 +101,7 @@ provide("locoScroll", scroll);
     <CreativeSection />
     <div class="my-400"></div>
     <div class="noiseOverlay"></div>
+    <ScrollBar :progress="progress" :limit="scrollLimit" />
     <Cursor />
   </div>
 </template>

@@ -59,7 +59,7 @@ const projectCount = computed(() => projects.value.length);
 const getScrollToValue = (deltaX: number) => {
   return Math.min(
     Math.max(
-      (locoScroll.value.lenisInstance?.scroll ?? 0) + deltaX * 0.5,
+      (locoScroll.value.lenisInstance?.scroll ?? 0) + deltaX * 0.7,
       workSectionPosition.value[0],
     ),
     workSectionPosition.value[1],
@@ -75,7 +75,6 @@ const horizMouseScroll = (e: Event) => {
     });
   }
 };
-
 </script>
 
 <template>
@@ -141,7 +140,8 @@ const horizMouseScroll = (e: Event) => {
         </div>
       </div>
       <div
-        class="absolute bottom-0 left-0 flex items-end w-full h-full pointer-events-none"
+        class="absolute bottom-0 left-0 flex items-end w-full h-full"
+        :style="`pointer-events: ${lightSwitchProgress > 0.05 ? 'auto' : 'none'}`"
       >
         <div
           v-for="i in 5"
@@ -149,11 +149,11 @@ const horizMouseScroll = (e: Event) => {
           :style="`--progressPercent: calc(${easing2(Math.max(Math.min((lightSwitchProgress - 0.1 * (i - 1)) / 0.6, 1), 0))} * 100%)`"
         ></div>
         <div
-          class="absolute left-1/2 top-1/2 -translate-1/2 font-alt font-extralight text-6xl md:text-8xl lg:text-10xl text-black flex flex-col items-center text-center"
+          class="creativeCornerHeader absolute left-1/2 top-1/2 -translate-1/2 font-alt font-extralight text-6xl md:text-8xl lg:text-10xl text-black flex flex-col items-center text-center"
           :style="`opacity: calc(${easing2(Math.max(Math.min((lightSwitchProgress - 0.7) / 0.3, 1), 0))} * 100%)`"
         >
           <span>Creative</span>
-          Corner
+          <span>Corner</span>
         </div>
       </div>
     </div>
@@ -179,7 +179,12 @@ const horizMouseScroll = (e: Event) => {
 }
 
 .lightTransition {
-  @apply w-[20vw] bg-stone-100/(--progressPercent) pointer-events-auto backdrop-blur-xs md:backdrop-blur-md;
+  @apply w-[20vw] bg-stone-100/(--progressPercent) backdrop-blur-xs md:backdrop-blur-md;
   height: var(--progressPercent);
+}
+
+.creativeCornerHeader span {
+  @apply hover:tracking-wider;
+  transition: letter-spacing 0.5s ease;
 }
 </style>
