@@ -109,7 +109,7 @@ const horizMouseScroll = (e: Event) => {
             <div v-if="isLoading" class="flex gap-1 items-center">
               Loading <PhCircleNotch class="animate-spin" />
             </div>
-            <div class="text-sm md:text-base italic text-center px-2" v-else>
+            <div class="text-sm md:text-lg italic text-center px-2" v-else>
               A collection of student projects and experiments.
               <Transition name="zoomReveal">
                 <ScrollReminder

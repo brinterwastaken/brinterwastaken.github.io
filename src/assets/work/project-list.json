@@ -16,7 +16,8 @@
       "tags": ["Front-end", "Web App"],
       "tools": ["Vue.js", "Nuxt 3"],
       "cover": "kcet-analyzer.webp",
-      "team": true
+      "team": true,
+      "link": "https://kcet-analyzer.vercel.app/"
     },
     {
       "name": "Database & MySQL Handbook",
@@ -25,7 +26,8 @@
       "tags": ["Educational", "E-Book"],
       "tools": ["Quarto", "LaTeX"],
       "cover": "db-mysql-handbook.webp",
-      "team": false
+      "team": false,
+      "link": "https://brin.is-a.dev/db-mysql-handbook/"
     },
     {
       "name": "Project ARMOUR",

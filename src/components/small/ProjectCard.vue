@@ -1,6 +1,12 @@
 <script setup lang="ts">
-import { PhCaretLeft, PhTag, PhUsers, PhWrench } from "@phosphor-icons/vue";
-import { onMounted, ref } from "vue";
+import {
+  PhArrowUpRight,
+  PhCaretLeft,
+  PhTag,
+  PhUsers,
+  PhWrench,
+} from "@phosphor-icons/vue";
+import { onMounted, ref, useTemplateRef } from "vue";
 
 const props = defineProps<{
   index: number;
@@ -9,23 +15,25 @@ const props = defineProps<{
 }>();
 
 const projectInfo = ref(false);
+const projectCardElement = useTemplateRef(`projectCard`);
 
 const onHover = (e: MouseEvent) => {
-  const target = e.target as HTMLElement;
+  const target = projectCardElement.value as HTMLElement;
   const highlight = target.children.item(0) as HTMLElement;
 
-  const [x, y] = [e.offsetX, e.offsetY];
-  const { width, height } = target.getBoundingClientRect();
+  if ((e.target as HTMLElement).tagName != "A") {
+    const [x, y] = [e.offsetX, e.offsetY];
+    const { width, height } = target.getBoundingClientRect();
 
-  const rotationY = (x / width - 0.5) * 15;
-  const rotationX = (y / height - 0.5) * -15;
-
-  target.style.transform = `perspective(80rem) rotateY(${rotationY}deg) rotateX(${rotationX}deg) `;
-  highlight.style.translate = `${-rotationY * 15}% ${rotationX * 15}% `;
+    const rotationY = (x / width - 0.5) * 15;
+    const rotationX = (y / height - 0.5) * -15;
+    target.style.transform = `perspective(80rem) rotateY(${rotationY}deg) rotateX(${rotationX}deg) `;
+    highlight.style.translate = `${-rotationY * 15}% ${rotationX * 15}% `;
+  }
 };
 
 const onExit = (e: MouseEvent) => {
-  const target = e.target! as HTMLElement;
+  const target = projectCardElement.value as HTMLElement;
   const highlight = target.children.item(0) as HTMLElement;
 
   target.style.transform = "perspective(80rem)";
@@ -53,6 +61,7 @@ onMounted(() => {
       data-scroll-repeat
       :data-scroll-call="`projCard-${index}`"
       :data-show-info="projectInfo"
+      ref="projectCard"
     >
       <!-- 
       buddy="👀"
@@ -81,7 +90,20 @@ onMounted(() => {
       <div
         class="absolute bg-linear-to-b from-transparent to-stone-950 md:via-stone-950/65 md:to-stone-950/85 bottom-[12svh] md:bottom-0 left-0 w-full h-50 -z-1"
       ></div>
-      <h2 class="text-2xl md:text-3xl font-alt">{{ project.name }}</h2>
+      <a
+        v-if="'link' in project"
+        :href="project.link"
+        target="_blank"
+        class="text-2xl md:text-3xl font-alt pointer-events-auto! decoration-2 underline-offset-3 hover:underline w-fit"
+        buddy="open link"
+        >{{ project.name
+        }}<PhArrowUpRight
+          class="ml-1.5 inline-block opacity-75"
+          size="24"
+          weight="bold"
+        />
+      </a>
+      <h2 v-else class="text-2xl md:text-3xl font-alt">{{ project.name }}</h2>
       <p class="text-xs md:text-sm">{{ project.description }}</p>
       <div
         class="flex flex-col gap-1.5 md:flex-row justify-between pt-2 border-t border-stone-400/20 text-xs"

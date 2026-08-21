@@ -39,9 +39,9 @@ onMounted(() => {
       <div
         v-for="i in 101"
         class="relative h-px bg-stone-500 text-stone-500 backdrop-invert saturate-0"
-        :style="`width: ${(i - 1) % 10 == 0 ? '1' : (i - 1) % 5 == 0 ? '0.5' : '0.25'}rem`"
+        :style="`width: ${(i - 1) % 10 == 0 ? '0.85' : (i - 1) % 5 == 0 ? '0.5' : '0.3'}rem`"
       >
-        <span class="absolute text-xs left-2" v-if="(i - 1) % 10 == 0">{{
+        <span class="absolute text-xs left-4 -top-2" v-if="(i - 1) % 10 == 0">{{
           i - 1
         }}</span>
       </div>
@@ -57,8 +57,10 @@ onMounted(() => {
   transition: translate 0.25s ease;
   animation: showScrollBar 1.5s ease;
 }
+
 .rulerScrollBar {
   @apply h-full w-full flex flex-col justify-between py-6 rounded-l-lg backdrop-blur-sm border border-stone-500 border-r-0;
+    box-shadow: inset 0.4rem 0 0.75rem #00000025;
 }
 
 /* Input range styling */
@@ -95,7 +97,7 @@ input[type="range"]::-moz-range-thumb {
     translate: 5rem -50%;
   }
   100% {
-    translate: 2.875rem -50%;
+    translate: 3.125rem -50%;
   }
 }
 </style>
