@@ -67,6 +67,7 @@ const getScrollToValue = (deltaX: number) => {
 };
 
 const horizMouseScroll = (e: Event) => {
+  e.preventDefault();
   const scrollToValue = getScrollToValue((e as WheelEvent).deltaX);
   if (Math.abs((e as WheelEvent).deltaY) < Math.abs((e as WheelEvent).deltaX)) {
     locoScroll.value.scrollTo(scrollToValue, {
