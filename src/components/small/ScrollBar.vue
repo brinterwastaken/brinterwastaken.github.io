@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type LocomotiveScroll from 'locomotive-scroll';
-import { inject, onMounted, ref, type Ref } from 'vue';
+import { inject, onMounted, type Ref } from 'vue';
 
 const props = defineProps<{
   progress: number;

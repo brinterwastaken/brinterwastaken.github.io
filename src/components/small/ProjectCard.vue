@@ -32,7 +32,7 @@ const onHover = (e: MouseEvent) => {
   }
 };
 
-const onExit = (e: MouseEvent) => {
+const onExit = (_e: MouseEvent) => {
   const target = projectCardElement.value as HTMLElement;
   const highlight = target.children.item(0) as HTMLElement;
 
