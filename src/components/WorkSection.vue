@@ -150,11 +150,12 @@ const horizMouseScroll = (e: Event) => {
           :style="`--progressPercent: calc(${easing2(Math.max(Math.min((lightSwitchProgress - 0.1 * (i - 1)) / 0.6, 1), 0))} * 100%)`"
         ></div>
         <div
-          class="creativeCornerHeader absolute left-1/2 top-1/2 -translate-1/2 font-alt font-extralight text-6xl md:text-8xl lg:text-10xl text-black flex flex-col items-center text-center"
+          class="creativeCornerHeader font-alt font-extralight text-black text-7xl lg:text-10xl absolute left-1/2 top-1/2 -translate-1/2 flex flex-col items-center text-center"
           :style="`opacity: calc(${easing2(Math.max(Math.min((lightSwitchProgress - 0.7) / 0.3, 1), 0))} * 100%)`"
         >
           <span>Creative</span>
           <span>Corner</span>
+          <p class="text-lg md:text-xl mt-4 font-serif italic">Photography, artwork and other creative projects.</p>
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 
+@import "./assets/fonts/Redaction.css";
+
 @import "tailwindcss";
 
 @import "locomotive-scroll/dist/locomotive-scroll.css";
@@ -19,6 +21,7 @@
   --font-main: "Manrope";
   --font-alt: "DM Sans";
   --font-mono: "Source Code Pro";
+  --font-serif: "Redaction";
 
   --color-periwinkle: #9a87fa;
   --color-tangerine: #fca17d;

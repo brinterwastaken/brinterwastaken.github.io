@@ -11,6 +11,7 @@ import Cursor from "./components/tiny/Cursor.vue";
 import WorkSection from "./components/WorkSection.vue";
 import CreativeSection from "./components/CreativeSection.vue";
 import ScrollBar from "./components/small/ScrollBar.vue";
+import WipBanner from "./components/small/WipBanner.vue";
 
 interface ScrollData {
   scroll: number;
@@ -102,6 +103,7 @@ provide("locoScroll", scroll);
     <div class="my-400"></div>
     <div class="noiseOverlay"></div>
     <ScrollBar :progress="progress" :limit="scrollLimit" />
+    <WipBanner />
     <Cursor />
   </div>
 </template>
