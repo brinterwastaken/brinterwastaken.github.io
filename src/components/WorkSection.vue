@@ -109,11 +109,12 @@ const horizMouseScroll = (e: Event) => {
             <div v-if="isLoading" class="flex gap-1 items-center">
               Loading <PhCircleNotch class="animate-spin" />
             </div>
-            <div class="text-sm md:text-lg italic text-center px-2" v-else>
+            <div class="text-base md:text-lg italic text-center px-2" v-else>
               A collection of student projects and experiments.
               <Transition name="zoomReveal">
                 <ScrollReminder
-                  :recommendation="false"
+                class="pt-2"
+                  :mini="true"
                   v-if="workProgress < 0.1 || workProgress > 0.9"
                 />
               </Transition>
@@ -150,7 +151,7 @@ const horizMouseScroll = (e: Event) => {
           :style="`--progressPercent: calc(${easing2(Math.max(Math.min((lightSwitchProgress - 0.1 * (i - 1)) / 0.6, 1), 0))} * 100%)`"
         ></div>
         <div
-          class="creativeCornerHeader font-alt font-extralight text-black text-7xl md:text-8xl absolute left-1/2 top-1/2 -translate-1/2 flex flex-col items-center text-center"
+          class="creativeCornerHeader font-alt font-extralight text-black text-7xl md:text-8xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-3/4 md:-translate-1/2 flex flex-col items-center text-center"
           :style="`opacity: calc(${easing2(Math.max(Math.min((lightSwitchProgress - 0.7) / 0.3, 1), 0))} * 100%)`"
         >
           <span>Creative</span>

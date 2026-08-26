@@ -2,16 +2,16 @@
 import { PhMouseSimple } from "@phosphor-icons/vue";
 
 const props = defineProps<{
-  recommendation : boolean;
+  mini: boolean;
 }>();
 </script>
 
 <template>
   <div
-    class="flex flex-col items-center p-4 text-stone-500"
+    :class="`flex flex-col items-center text-stone-500 ${mini ? '' : 'p-4'}`"
   >
     <div class="scrollDown">Scroll Down<PhMouseSimple :size="20" /></div>
-    <div v-if="recommendation" class="md:hidden text-sm">Best Viewed on a Laptop/PC</div>
+    <div v-if="!mini" class="md:hidden text-sm">Best Viewed on a Laptop/PC</div>
   </div>
 </template>
 

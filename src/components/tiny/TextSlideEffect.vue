@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from "vue";
 
 const props = defineProps<{
   text: string;
   hidden?: boolean;
+  delay?: number;
 }>();
 
 const count = computed(() => props.text.length);
@@ -15,7 +16,7 @@ const count = computed(() => props.text.length);
       <span
         v-for="[index, c] of [...text].entries()"
         class="group-hover:-translate-y-full whitespace-pre"
-        :style="`transition: translate 250ms ease-in-out ${index * 250/count}ms; opacity: ${hidden ? 0 : 1};`"
+        :style="`transition: translate 250ms ease-in-out ${(delay ?? 0) + (index * 250) / count}ms; opacity: ${hidden ? 0 : 1};`"
         >{{ c }}</span
       >
     </div>
@@ -23,7 +24,7 @@ const count = computed(() => props.text.length);
       <span
         v-for="[index, c] of [...text].entries()"
         class="translate-y-full group-hover:translate-y-0 whitespace-pre"
-        :style="`transition: translate 250ms ease-in-out ${index * 250/count}ms;`"
+        :style="`transition: translate 250ms ease-in-out ${(delay ?? 0) + (index * 250) / count}ms;`"
         >{{ c }}</span
       >
     </div>
