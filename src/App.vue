@@ -94,7 +94,7 @@ provide("locoScroll", scroll);
       data-scroll-speed="-0.5"
     >
       <Transition name="zoomReveal">
-        <ScrollReminder :mini="true" v-if="position < 50" />
+        <ScrollReminder :mini="false" v-if="position < 50" />
       </Transition>
     </div>
     <PreWorkSection />
