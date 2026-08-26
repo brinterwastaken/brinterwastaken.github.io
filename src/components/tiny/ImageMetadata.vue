@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PhCamera, PhAperture, PhCube, PhGearSix } from "@phosphor-icons/vue";
+import { PhCamera, PhCube, PhGearSix } from "@phosphor-icons/vue";
 import TextSlideEffect from "./TextSlideEffect.vue";
 
 const props = defineProps<{
