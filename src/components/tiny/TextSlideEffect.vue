@@ -11,7 +11,7 @@ const count = computed(() => props.text.length);
 </script>
 
 <template>
-  <div class="relative overflow-clip leading-snug pointer-events-none">
+  <div class="relative overflow-clip leading-relaxed pointer-events-none">
     <div class="flex items-center">
       <span
         v-for="[index, c] of [...text].entries()"

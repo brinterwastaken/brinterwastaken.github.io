@@ -14,7 +14,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
 </script>
 
 <template>
-  <div class="md:my-32">
+  <div class="md:my-24">
     <div class="w-vw overflow-clip">
       <h1
         data-scroll
@@ -23,6 +23,8 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
         style="translate: calc(var(--progress) * -25%) 0"
       >
         About Me
+        <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
+        <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
         <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
         <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
         <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
@@ -46,7 +48,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
         <PhAsterisk class="inline mb-1 text-periwinkle-dark" size="24" />
         Mechanical Engineering Student, Designer and Self-taught Developer
         <PhAsterisk class="inline mb-1 text-tangerine-dark" size="24" /> Based
-        in Bengaluru.
+        in Bengaluru, IN.
       </div>
       <div class="bg-white my-4 mx-auto w-fit px-6 py-3 rounded-lg md:text-lg">
         <PhCircle weight="fill" class="blinkingDot" size="12" />
@@ -73,7 +75,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
         <div class="flex flex-wrap justify-center gap-4 p-6 text-sm">
           <a
             class="profileLinkButton group"
-            buddy="click"
+            buddy="open link"
             href="https://www.linkedin.com/in/trinethr-n/"
             target="_blank"
           >
@@ -83,7 +85,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
           </a>
           <a
             class="profileLinkButton group"
-            buddy="click"
+            buddy="open link"
             href="https://github.com/brinterwastaken/"
             target="_blank"
           >
@@ -93,7 +95,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
           </a>
           <a
             class="profileLinkButton group"
-            buddy="click"
+            buddy="open link"
             href="https://instagram.com/_brinter/"
             target="_blank"
           >
@@ -103,7 +105,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
           </a>
           <a
             class="profileLinkButton group"
-            buddy="click"
+            buddy="open link"
             href="https://open.spotify.com/user/doc0wc4yekwnq5tzbcjx2oo4z"
             target="_blank"
           >
@@ -135,6 +137,10 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
 
 .profileLinkButton {
   @apply w-fit px-6 py-3 bg-stone-950 text-white flex items-center gap-1 active:scale-95 transition-all;
+}
+
+.profileLinkButton svg {
+  @apply pointer-events-none;
 }
 
 @keyframes blink {

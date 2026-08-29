@@ -13,6 +13,7 @@ import CreativeSection from "./components/CreativeSection.vue";
 import ScrollBar from "./components/small/ScrollBar.vue";
 import WipBanner from "./components/small/WipBanner.vue";
 import AboutMe from "./components/AboutMe.vue";
+import Footer from "./components/Footer.vue";
 
 interface ScrollData {
   scroll: number;
@@ -102,6 +103,7 @@ provide("locoScroll", scroll);
     <WorkSection />
     <CreativeSection />
     <AboutMe />
+    <Footer />
     <div class="noiseOverlay"></div>
     <ScrollBar :progress="progress" :limit="scrollLimit" />
     <WipBanner />
