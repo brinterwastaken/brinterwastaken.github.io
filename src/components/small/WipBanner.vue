@@ -1,10 +1,10 @@
 <template>
-  <div class="hazardTape font-alt">
+  <div class="hazardTape font-alt font-bold">
     <div class="flex items-center">
-      <span>Work In Progress</span>
-      <span>Work In Progress</span>
-      <span>Work In Progress</span>
-      <span>Work In Progress</span>
+      <span>BETA Version</span>
+      <span>Report Issues</span>
+      <span>BETA Version</span>
+      <span>Report Issues</span>
     </div>
   </div>
 </template>
@@ -13,7 +13,7 @@
 @reference "tailwindcss";
 
 .hazardTape {
-  @apply fixed -top-32 md:-top-24 -left-48 md:-left-40 h-6 flex items-center w-max mt-24 -rotate-30 backdrop-blur-sm text-white;
+  @apply fixed -top-36 md:-top-28 -left-48 md:-left-48 h-6 flex items-center w-max mt-24 -rotate-30 backdrop-blur-sm text-white;
   background: repeating-linear-gradient(
     -45deg,
     color-mix(in srgb, var(--color-amber-500) 60%, transparent),
@@ -37,7 +37,7 @@
     translate: 0 0;
   }
   100% {
-    translate: -25% 0;
+    translate: -50% 0;
   }
 }
 </style>
