@@ -128,15 +128,6 @@ import { PhArrowUpRight } from "@phosphor-icons/vue";
         </div>
       </div>
     </div>
-    <a
-      class="w-fit my-12 md:my-8 group px-8 pr-7 py-4 bg-stone-950 text-white flex items-center gap-1 mx-auto active:scale-95 transition-all"
-      buddy="click"
-      href="https://instagram.com/_brinter/"
-      target="_blank"
-    >
-      <TextSlideEffect text="View more on Instagram" />
-      <PhArrowUpRight :size="18" class="pointer-events-none" />
-    </a>
   </div>
 </template>
 

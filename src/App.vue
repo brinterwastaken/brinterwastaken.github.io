@@ -102,7 +102,6 @@ provide("locoScroll", scroll);
     <WorkSection />
     <CreativeSection />
     <AboutMe />
-    <div class="my-400"></div>
     <div class="noiseOverlay"></div>
     <ScrollBar :progress="progress" :limit="scrollLimit" />
     <WipBanner />

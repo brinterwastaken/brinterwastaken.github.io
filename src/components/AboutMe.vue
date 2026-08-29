@@ -1,6 +1,15 @@
 <script setup lang="ts">
-import { PhAsterisk, PhCircle } from "@phosphor-icons/vue";
+import {
+  PhArrowUpRight,
+  PhAsterisk,
+  PhCircle,
+  PhGithubLogo,
+  PhInstagramLogo,
+  PhLinkedinLogo,
+  PhSpotifyLogo,
+} from "@phosphor-icons/vue";
 import Pronunciation from "./tiny/Pronunciation.vue";
+import TextSlideEffect from "./tiny/TextSlideEffect.vue";
 const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರಿನೇತ್ರ", "Trinethr"];
 </script>
 
@@ -10,7 +19,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
       <h1
         data-scroll
         data-scroll-css-progress
-        class="text-7xl md:text-9xl font-alt opacity-60 w-max"
+        class="text-5xl md:text-7xl font-alt opacity-60 w-max"
         style="translate: calc(var(--progress) * -25%) 0"
       >
         About Me
@@ -23,9 +32,9 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
     </div>
 
     <div class="mx-6">
-      <div class="mt-16 mb-4 h-24 md:h-34 overflow-clip">
+      <div class="mt-16 mb-4 h-28 md:h-34 overflow-clip">
         <div
-          class="nameCarousel text-6xl md:text-8xl px-12 font-light leading-24 md:leading-34 flex flex-col text-center"
+          class="nameCarousel text-7xl md:text-8xl font-light leading-28 md:leading-34 flex flex-col text-center"
         >
           <div v-for="name in nameTranslations">{{ name }}</div>
         </div>
@@ -45,24 +54,63 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
       </div>
       <div class="text-lg mx-auto max-w-4xl">
         <p class="mb-4 leading-snug">
-          Since when I first learned how to use a screwdriver (when I was
-          little), I've loved to build as well as take apart things. This
-          interest carried over to engineering, design, and programming, where I
-          spend hours together creating big projects as well as fixing little
-          features (that no one would notice).
+          Since I first learned how to use a screwdriver (when I was little),
+          I've loved to build as well as take apart things. This interest
+          carried over to engineering, design, and programming, where I spend
+          hours together creating big projects as well as fixing little features
+          (that no one would notice).
         </p>
         <p class="mb-4 leading-snug">
           I also play the Violin, in the Indian Classical Carnatic style (which
           originated in South India over 2000 years ago), and I'm interested in
           all things Music.
         </p>
-        <div class="text-2xl my-8 mx-auto text-center">
+        <div class="text-2xl mt-8 mx-auto text-center">
           <PhAsterisk class="inline mb-1 text-periwinkle-dark" size="20" />
-          Profiles
+          Check out my Profiles
           <PhAsterisk class="inline mb-1 text-tangerine-dark" size="20" />
         </div>
-        <div class="flex">
-          
+        <div class="flex flex-wrap justify-center gap-4 p-6 text-sm">
+          <a
+            class="profileLinkButton group"
+            buddy="click"
+            href="https://www.linkedin.com/in/trinethr-n/"
+            target="_blank"
+          >
+            <PhLinkedinLogo :size="20" />
+            <TextSlideEffect text="Linkedin" />
+            <PhArrowUpRight :size="16" class="pointer-events-none" />
+          </a>
+          <a
+            class="profileLinkButton group"
+            buddy="click"
+            href="https://github.com/brinterwastaken/"
+            target="_blank"
+          >
+            <PhGithubLogo :size="20" />
+            <TextSlideEffect text="GitHub" />
+            <PhArrowUpRight :size="16" class="pointer-events-none" />
+          </a>
+          <a
+            class="profileLinkButton group"
+            buddy="click"
+            href="https://instagram.com/_brinter/"
+            target="_blank"
+          >
+            <PhInstagramLogo :size="20" />
+            <TextSlideEffect text="Instagram" />
+            <PhArrowUpRight :size="16" class="pointer-events-none" />
+          </a>
+          <a
+            class="profileLinkButton group"
+            buddy="click"
+            href="https://open.spotify.com/user/doc0wc4yekwnq5tzbcjx2oo4z?si=c0286ab9dc9142b2"
+            target="_blank"
+          >
+            <PhSpotifyLogo :size="20" />
+            <TextSlideEffect text="Spotify" />
+            <PhArrowUpRight :size="16" class="pointer-events-none" />
+          </a>
         </div>
       </div>
     </div>
@@ -76,8 +124,13 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
   @apply inline mb-1 mr-1 text-stone-200;
   animation: blink 1.2s linear infinite;
 }
+
 .nameCarousel {
   animation: shuffleNames 7.5s linear infinite;
+}
+
+.profileLinkButton {
+  @apply w-fit px-6 py-3 bg-stone-950 text-white flex items-center gap-1 active:scale-95 transition-all;
 }
 
 @keyframes blink {
