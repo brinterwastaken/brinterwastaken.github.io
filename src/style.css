@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&family=Noto+Sans+Kannada:wght@100..900&display=swap");
 
 @import "./assets/fonts/Redaction.css";
 
@@ -18,13 +19,17 @@
 }
 
 @theme {
-  --font-main: "Manrope";
-  --font-alt: "DM Sans";
+  --font-main:
+    "Manrope", "Noto Sans Devanagari", "Noto Sans Kannada", sans-serif;
+  --font-alt:
+    "DM Sans", "Noto Sans Devanagari", "Noto Sans Kannada", sans-serif;
   --font-mono: "Source Code Pro";
   --font-serif: "Redaction";
 
   --color-periwinkle: #9a87fa;
+  --color-periwinkle-dark: #8061ee;
   --color-tangerine: #fca17d;
+  --color-tangerine-dark: #f17642;
 }
 
 body {

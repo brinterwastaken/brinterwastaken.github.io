@@ -5,7 +5,7 @@ import { PhArrowUpRight } from "@phosphor-icons/vue";
 </script>
 
 <template>
-  <div class="-translate-y-1/5 md:translate-0">
+  <div class="-translate-y-1/7 md:translate-0">
     <div
       class="flex flex-col-reverse md:flex-row px-4 mx-auto max-w-4xl flex-wrap justify-center"
       data-scroll
@@ -129,7 +129,7 @@ import { PhArrowUpRight } from "@phosphor-icons/vue";
       </div>
     </div>
     <a
-      class="w-fit mt-20 group px-8 pr-7 py-4 bg-stone-950 text-white flex items-center gap-1 mx-auto active:scale-95 transition-all"
+      class="w-fit my-12 md:my-8 group px-8 pr-7 py-4 bg-stone-950 text-white flex items-center gap-1 mx-auto active:scale-95 transition-all"
       buddy="click"
       href="https://instagram.com/_brinter/"
       target="_blank"
