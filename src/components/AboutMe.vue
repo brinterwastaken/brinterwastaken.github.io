@@ -23,11 +23,11 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
         style="translate: calc(var(--progress) * -25%) 0"
       >
         About Me
-        <PhAsterisk class="inline-block mb-4 w-20" weight="bold" /> About Me
-        <PhAsterisk class="inline-block mb-4 w-20" weight="bold" /> About Me
-        <PhAsterisk class="inline-block mb-4 w-20" weight="bold" /> About Me
-        <PhAsterisk class="inline-block mb-4 w-20" weight="bold" /> About Me
-        <PhAsterisk class="inline-block mb-4 w-20" weight="bold" /> About Me
+        <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
+        <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
+        <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
+        <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
+        <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
       </h1>
     </div>
 
@@ -119,6 +119,10 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
 
 <style scoped>
 @reference "tailwindcss";
+
+.headingAsterisk {
+  @apply inline-block mb-2 w-10 md:mb-4 md:w-16;
+}
 
 .blinkingDot {
   @apply inline mb-1 mr-1 text-stone-200;
