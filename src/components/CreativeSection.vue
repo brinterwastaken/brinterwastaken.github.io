@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import ImageMetadata from "./tiny/ImageMetadata.vue";
-import TextSlideEffect from "./tiny/TextSlideEffect.vue";
-import { PhArrowUpRight } from "@phosphor-icons/vue";
 </script>
 
 <template>
@@ -37,7 +35,7 @@ import { PhArrowUpRight } from "@phosphor-icons/vue";
           data-scroll
           data-scroll-class="inView"
           data-scroll-repeat
-          class="imageDisplay group  md:w-full!"
+          class="imageDisplay group md:w-full!"
           style="width: calc(60% - 0.5rem); transform-origin: 100% 50%"
         >
           <ImageMetadata
@@ -143,5 +141,4 @@ import { PhArrowUpRight } from "@phosphor-icons/vue";
 .imageDisplay.inView {
   @apply scale-100 opacity-100;
 }
-
 </style>

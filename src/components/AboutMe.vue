@@ -104,7 +104,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
           <a
             class="profileLinkButton group"
             buddy="click"
-            href="https://open.spotify.com/user/doc0wc4yekwnq5tzbcjx2oo4z?si=c0286ab9dc9142b2"
+            href="https://open.spotify.com/user/doc0wc4yekwnq5tzbcjx2oo4z"
             target="_blank"
           >
             <PhSpotifyLogo :size="20" />
