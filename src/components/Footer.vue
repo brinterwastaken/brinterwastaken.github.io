@@ -18,7 +18,7 @@ const copyUsername = async () => {
 <template>
   <div
     data-scroll
-    class="relative h-[85lvh] w-full bg-stone-950 text-white px-8 md:px-24 pt-32 overflow-clip"
+    class="relative h-lvh md:h-[85lvh] w-full bg-stone-950 text-white px-8 md:px-24 pt-[10lvh] md:pt-32 overflow-clip"
   >
     <div
       data-scroll
@@ -82,10 +82,10 @@ const copyUsername = async () => {
     <div
       data-scroll
       data-scroll-css-progress
-      class="absolute left-0 top-0 bg-stone-100 w-full h-24"
+      class="absolute left-0 top-0 bg-stone-100 w-full h-[5lvh] md:h-20 [--max-rad:5lvh] md:[--max-rad:5rem]"
       style="
-        border-radius: 0 0 calc(var(--progress) * 6rem)
-          calc(var(--progress) * 6rem);
+        border-radius: 0 0 calc(var(--progress) * var(--max-rad))
+          calc(var(--progress) * var(--max-rad));
       "
     ></div>
   </div>
