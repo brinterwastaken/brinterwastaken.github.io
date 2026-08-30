@@ -1,21 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Trinethr - Personal Website">
+    <title>Trinethr - Portfolio</title>
+
+    <!-- SEO Tags -->
+    <meta property="og:title" content="Trinethr - Portfolio Website">
+    <meta name="description" content="Aspiring Automobile Design Engineer studying Mechanical Engineering. Designing for the web, programming for systems, and engineering for motion.">
+    <meta name="og:description" content="Aspiring Automobile Design Engineer studying Mechanical Engineering. Designing for the web, programming for systems, and engineering for motion.">
+    <meta property="og:image" content="https://brin.is-a.dev/preview.png">
     <meta property="og:url" content="https://brin.is-a.dev/">
-    <meta property="og:description" content="Creative frontend developer and artist.">
-    <meta property="og:image" content="https://brin.is-a.dev/pfp.png">
-    <meta name="description" content="Creative frontend developer and artist.">
-    <title>Trinethr - Personal Website</title>
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
   </head>
   <body>
-    <div id="threejs-container">
-      <canvas id="threejs"></canvas>
-    </div>
     <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+    <!-- Cloudflare Web Analytics -->
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "a3b5fcad3a0b495a8c29e2c0444e8b1f"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
   </body>
 </html>
