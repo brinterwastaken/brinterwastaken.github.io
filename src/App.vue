@@ -11,7 +11,6 @@ import Cursor from "./components/tiny/Cursor.vue";
 import WorkSection from "./components/WorkSection.vue";
 import CreativeSection from "./components/CreativeSection.vue";
 import ScrollBar from "./components/small/ScrollBar.vue";
-import WipBanner from "./components/small/WipBanner.vue";
 import AboutMe from "./components/AboutMe.vue";
 import Footer from "./components/Footer.vue";
 
