@@ -106,7 +106,7 @@ provide("locoScroll", scroll);
     <Footer />
     <div class="noiseOverlay"></div>
     <ScrollBar :progress="progress" :limit="scrollLimit" />
-    <WipBanner />
+    <!-- WipBanner /-->
     <Cursor />
   </div>
 </template>
