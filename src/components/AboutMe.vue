@@ -10,7 +10,7 @@ import {
 } from "@phosphor-icons/vue";
 import Pronunciation from "./tiny/Pronunciation.vue";
 import TextSlideEffect from "./tiny/TextSlideEffect.vue";
-const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರಿನೇತ್ರ", "Trinethr"];
+const nameTranslations = ["Trinethr", "ತ್ರಿನೇತ್ರ", "त्रिनेत्र", "Trinethr"];
 </script>
 
 <template>
@@ -23,6 +23,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
         style="translate: calc(var(--progress) * -25%) 0"
       >
         About Me
+        <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
         <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
         <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
         <PhAsterisk class="headingAsterisk" weight="bold" /> About Me
@@ -57,10 +58,10 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
       <div class="text-lg mx-auto max-w-4xl">
         <p class="mb-4 leading-snug">
           Since I first learned how to use a screwdriver (when I was little),
-          I've loved to build as well as take apart things. This interest
+          I've loved to build things as well as take them apart. This interest
           carried over to engineering, design, and programming, where I spend
-          hours together creating big projects as well as fixing little features
-          (that no one would notice).
+          hours together creating big projects (while sometimes obsessing over
+          small details that few would notice).
         </p>
         <p class="mb-4 leading-snug">
           I also play the Violin, in the Indian Classical Carnatic style (which
@@ -80,7 +81,7 @@ const nameTranslations = ["Trinethr", "त्रिनेत्र", "ತ್ರ�
             target="_blank"
           >
             <PhLinkedinLogo :size="20" />
-            <TextSlideEffect text="Linkedin" />
+            <TextSlideEffect text="LinkedIn" />
             <PhArrowUpRight :size="16" class="pointer-events-none" />
           </a>
           <a

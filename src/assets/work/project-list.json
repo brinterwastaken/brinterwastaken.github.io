@@ -36,7 +36,8 @@
       "tags": ["Mobile App", "Electronics"],
       "tools": ["Flutter", "ESP32"],
       "cover": "armour-project.webp",
-      "team": true
+      "team": true,
+      "link": "https://github.com/project-armour"
     },
     {
       "name": "UrbanConnect Concept",
