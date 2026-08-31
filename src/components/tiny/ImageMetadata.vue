@@ -36,7 +36,7 @@ const props = defineProps<{
 @reference "tailwindcss";
 
 .metadataBox {
-  @apply hidden md:flex absolute bottom-0 left-0 flex-col h-0 group-hover:h-14 box-border justify-between w-full text-sm backdrop-blur-lg overflow-clip;
+  @apply hidden md:flex absolute bottom-0 left-0 flex-col h-0 group-hover:h-16 box-border justify-between w-full text-sm backdrop-blur-lg overflow-clip;
   transition: height 300ms cubic-bezier(0.4, 1.1, 0.9, 1);
 }
 </style>
