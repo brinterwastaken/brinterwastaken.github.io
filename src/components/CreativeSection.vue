@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import ImageMetadata from "./tiny/ImageMetadata.vue";
 import { PhX } from "@phosphor-icons/vue";
 
-const showExpandedImage = ref(false);
-const expandedImage = ref("");
+const showExpandedImg = ref(false);
+const expandedImgName = ref("");
 const expandedMetaData = ref(["", ""])
 const imgAspectRatio = ref(1);
 
-const expandImage = (url: string, aspectRatio: number, metaData: string[]) => {
+const expandImage = (imageName: string, aspectRatio: number, metaData: string[]) => {
   window.addEventListener("keydown", handleKeyDown);
-  expandedImage.value = new URL(url, import.meta.url).href;
+  expandedImgName.value = imageName;
   expandedMetaData.value = metaData;
-  showExpandedImage.value = true;
+  showExpandedImg.value = true;
   imgAspectRatio.value = aspectRatio;
 };
 
 const hideExpandedImage = () => {
   window.removeEventListener("keydown", handleKeyDown);
-  showExpandedImage.value = false;
+  showExpandedImg.value = false;
 };
 
 const handleKeyDown = (e: KeyboardEvent) => {
@@ -26,6 +26,8 @@ const handleKeyDown = (e: KeyboardEvent) => {
     hideExpandedImage();
   }
 };
+
+const expandedImgUrl = computed(() => new URL(`../assets/creative/${expandedImgName.value}`, import.meta.url).href);
 </script>
 
 <template>
@@ -48,7 +50,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
             data-scroll-repeat
             class="imageDisplay group w-[40%] md:w-full"
             style="transform-origin: 100% 100%"
-            @click="expandImage('../assets/creative/iron-walkway.webp', 1 / 2, ['Canon EOS R50 + 18-45mm', 'f/6.3 1/60s ISO 250 18mm'])"
+            @click="expandImage('iron-walkway.webp', 1 / 2, ['Canon EOS R50 + 18-45mm', 'f/6.3 1/60s ISO 250 18mm'])"
           >
             <ImageMetadata
               camera="Canon EOS R50 + 18-45mm"
@@ -66,7 +68,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
             data-scroll-repeat
             class="imageDisplay group md:w-full!"
             style="width: calc(60% - 0.5rem); transform-origin: 100% 50%"
-            @click="expandImage('../assets/creative/butterfly.webp', 2 / 3, ['Canon PowerShot S5 IS', 'f/3.5 1/250s ISO100 44mm'])"
+            @click="expandImage('butterfly.webp', 2 / 3, ['Canon PowerShot S5 IS', 'f/3.5 1/250s ISO100 44mm'])"
           >
             <ImageMetadata
               camera="Canon PowerShot S5 IS"
@@ -103,7 +105,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
             data-scroll-repeat
             class="imageDisplay group h-fit w-full"
             style="transform-origin: 0 100%"
-            @click="expandImage('../assets/creative/singapore-mrt.webp', 3 / 2, ['Canon EOS R50 + 18-45mm', 'f/20 1/4s ISO100 40mm'])"
+            @click="expandImage('singapore-mrt.webp', 3 / 2, ['Canon EOS R50 + 18-45mm', 'f/20 1/4s ISO100 40mm'])"
           >
             <ImageMetadata
               camera="Canon EOS R50 + 18-45mm"
@@ -122,7 +124,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
               data-scroll-repeat
               class="imageDisplay group w-4/11"
               style="transform-origin: 50% 50%"
-              @click="expandImage('../assets/creative/caustics.webp', 4 / 5, ['Blender 5.2.1 LTS', 'Cycles Render Engine'])"
+              @click="expandImage('caustics.webp', 4 / 5, ['Blender 5.2.1 LTS', 'Cycles Render Engine'])"
             >
               <ImageMetadata :blender="true" settings="Cycles Render Engine" />
               <img
@@ -137,7 +139,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
               data-scroll-repeat
               class="imageDisplay group w-7/11"
               style="transform-origin: 0 50%"
-              @click="expandImage('../assets/creative/keys.webp', 3 / 2, ['Blender 5.2.1 LTS', 'Cycles Render Engine'])"
+              @click="expandImage('keys.webp', 3 / 2, ['Blender 5.2.1 LTS', 'Cycles Render Engine'])"
             >
               <ImageMetadata :blender="true" settings="Cycles Render Engine" />
               <img
@@ -154,7 +156,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
             data-scroll-repeat
             class="imageDisplay group"
             style="transform-origin: 0 0"
-            @click="expandImage('../assets/creative/kerala-pond.webp', 3 / 2, ['Canon EOS R50 + 18-45mm', 'f/11 1/400s ISO200 28mm'])"
+            @click="expandImage('kerala-pond.webp', 3 / 2, ['Canon EOS R50 + 18-45mm', 'f/11 1/400s ISO200 28mm'])"
           >
             <ImageMetadata
               camera="Canon EOS R50 + 18-45mm"
@@ -167,7 +169,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
     </div>
     <Transition name="imageDialog">
       <div
-        v-if="showExpandedImage"
+        v-if="showExpandedImg"
         tabindex="0"
         class="expandedImageDialog fixed inset-0 z-50 flex flex-col items-center justify-center p-4 md:p-16 lg:py-16 lg:px-24 xl:py-16 xl:px-32 md:backdrop-blur-sm"
       >
@@ -192,7 +194,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
             />
           </button>
         </div>
-        <img :src="expandedImage" class="expandedImage" />
+        <img :src="expandedImgUrl" class="expandedImage" />
       </div>
     </Transition>
   </div>
