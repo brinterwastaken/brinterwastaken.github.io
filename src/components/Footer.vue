@@ -18,13 +18,13 @@ const copyUsername = async () => {
 <template>
   <div
     data-scroll
-    class="relative h-lvh md:h-[85lvh] w-full bg-stone-950 text-white px-8 md:px-24 pt-[10lvh] md:pt-32 overflow-clip"
+    class="relative h-lvh md:h-[85lvh] w-full bg-stone-950 text-white px-8 md:px-24 pt-[10lvh] md:pt-28 overflow-clip"
   >
     <div
       data-scroll
-      data-scroll-offset="-60%, 0"
+      data-scroll-offset="-80%, 0"
       data-scroll-speed="-0.25"
-      class="mx-auto my-8"
+      class="mx-auto"
     >
       <p class="text-5xl md:text-7xl mb-8">
         Let's talk <br />over a cup of<br />
