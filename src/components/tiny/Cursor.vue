@@ -66,7 +66,7 @@ onMounted(() => {
 #cursor,
 #cursorBuddy,
 #cursorOutline {
-  @apply fixed -top-8 -left-8 z-100 pointer-events-none;
+  @apply fixed -top-8 -left-8 z-999 pointer-events-none;
 }
 
 #cursor {

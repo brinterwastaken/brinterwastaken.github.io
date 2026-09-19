@@ -41,5 +41,5 @@ code {
 }
 
 * {
-  @apply md:cursor-none!;
+  @apply lg:cursor-none!;
 }
